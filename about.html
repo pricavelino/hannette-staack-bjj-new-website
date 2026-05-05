@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Hannette Staack BJJ</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --cream:        #f2ead0;
+      --sand:         #d9cdb8;
+      --sage:         #92a69c;
+      --teal:         #567373;
+      --green:        #4aa744;
+      --blue:         #2abbf0;
+      --gold:         #fccd14;
+      --dark:         #0d0d0d;
+      --white:        #ffffff;
+      --font-display: 'Teko', sans-serif;
+      --font-body:    'Barlow Condensed', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--dark); font-family: var(--font-body); font-size: 1.2rem; line-height: 1.7; overflow-x: hidden; }
+    h1, h2, h3, h4, h5 { font-family: var(--font-display); letter-spacing: 0.04em; }
+
+    /* ─── NAVBAR ─── */
+    .navbar { background: rgba(86,115,115,0.97); backdrop-filter: blur(10px); border-bottom: 3px solid var(--gold); padding: 0.75rem 0; position: sticky; top: 0; z-index: 1000; }
+    .navbar-brand { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.1em; color: var(--cream) !important; line-height: 1; }
+    .navbar-brand span { color: var(--gold); }
+    .nav-link { color: rgba(242,234,208,0.85) !important; font-family: var(--font-body); font-weight: 700; font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1rem !important; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: var(--gold) !important; }
+    .navbar-toggler { border-color: var(--gold); }
+    .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23fccd14' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--teal) 0%, rgba(86,115,115,0.85) 100%);
+      padding: 5rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      right: -80px; top: 0;
+      width: 420px; height: 100%;
+      background: linear-gradient(180deg, var(--gold) 0%, var(--green) 100%);
+      opacity: 0.08;
+      transform: skewX(-8deg);
+    }
+    .page-hero-label { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(242,234,208,0.6); margin-bottom: 0.5rem; }
+    .page-hero-title { font-family: var(--font-display); font-size: clamp(3rem,8vw,6rem); font-weight: 600; line-height: 0.9; color: var(--cream); }
+    .page-hero-title span { color: var(--gold); }
+    .page-hero-sub { font-size: 1.2rem; color: rgba(242,234,208,0.75); font-style: italic; margin-top: 1rem; max-width: 500px; }
+
+    /* ─── INTRO SECTION ─── */
+    .intro-section { background: var(--sage); padding: 4rem 0; }
+    .intro-text { font-size: 1.25rem; color: rgba(13,13,13,0.82); line-height: 1.75; }
+    .intro-quote {
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      background: rgba(252,205,20,0.08);
+    }
+    .intro-quote p {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--teal);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .intro-quote cite { font-family: var(--font-body); font-size: 0.9rem; color: rgba(13,13,13,0.5); letter-spacing: 0.1em; font-style: normal; text-transform: uppercase; }
+
+    /* ─── TIMELINE ─── */
+    .timeline-section { background: var(--cream); padding: 5rem 0; }
+    .timeline-section .section-label { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+    .timeline-section .section-title { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4rem); font-weight: 600; line-height: 0.95; color: var(--dark); margin-bottom: 1rem; }
+    .title-bar { width: 60px; height: 4px; background: linear-gradient(90deg,var(--gold),var(--green)); margin-bottom: 3rem; }
+
+    .timeline { position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--gold), var(--green), var(--teal));
+      opacity: 0.3;
+    }
+
+    .milestone {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+    .milestone:last-child { margin-bottom: 0; }
+
+    /* Alterna lado esquerdo/direito */
+    .milestone:nth-child(odd)  .ms-content { grid-column: 1; text-align: right; padding-right: 2.5rem; }
+    .milestone:nth-child(odd)  .ms-dot     { grid-column: 2; }
+    .milestone:nth-child(odd)  .ms-media   { grid-column: 3; padding-left: 2.5rem; }
+
+    .milestone:nth-child(even) .ms-media   { grid-column: 1; padding-right: 2.5rem; order: -1; }
+    .milestone:nth-child(even) .ms-dot     { grid-column: 2; }
+    .milestone:nth-child(even) .ms-content { grid-column: 3; text-align: left; padding-left: 2.5rem; }
+
+    .ms-dot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4px;
+    }
+    .ms-dot-circle {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      border: 3px solid var(--sand);
+      background: var(--cream);
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .milestone.world  .ms-dot-circle { background: var(--green); border-color: var(--green); }
+    .milestone.adcc   .ms-dot-circle { background: var(--gold);  border-color: #b8860b; }
+    .milestone.mma    .ms-dot-circle { background: var(--blue);  border-color: var(--blue); }
+    .milestone.hall   .ms-dot-circle { background: var(--teal);  border-color: var(--teal); }
+    .milestone.career .ms-dot-circle { background: var(--sage);  border-color: var(--teal); }
+
+    .ms-year {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .ms-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .badge-world  { background: rgba(74,167,68,0.15);  color: #2d7a28; border: 1px solid rgba(74,167,68,0.4); }
+    .badge-adcc   { background: rgba(252,205,20,0.2);  color: #7a5c00; border: 1px solid rgba(252,205,20,0.5); }
+    .badge-mma    { background: rgba(42,187,240,0.15); color: #0d5f7a; border: 1px solid rgba(42,187,240,0.4); }
+    .badge-hall   { background: rgba(86,115,115,0.15); color: var(--teal); border: 1px solid rgba(86,115,115,0.3); }
+    .badge-career { background: rgba(146,166,156,0.2); color: var(--teal); border: 1px solid rgba(146,166,156,0.4); }
+
+    .ms-event-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+    .ms-desc {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: rgba(13,13,13,0.65);
+      line-height: 1.6;
+    }
+
+    /* Área de mídia — foto ou vazia */
+    .ms-media { display: flex; align-items: flex-start; }
+
+    /* ─── FOTO DO MARCO ─── */
+    /* Funciona com fotos verticais E horizontais automaticamente */
+    .ms-photo {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border: 3px solid var(--sand);
+    }
+    /* Foto vertical — usa mais altura */
+    .ms-photo.vertical {
+      max-height: 420px;
+      object-position: center top;
+    }
+    /* Foto horizontal — usa menos altura */
+    .ms-photo.horizontal {
+      max-height: 240px;
+      object-position: center;
+    }
+
+    /* Placeholder quando não há foto */
+    .ms-photo-placeholder {
+      width: 100%;
+      min-height: 180px;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: rgba(13,13,13,0.3);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 2px dashed rgba(86,115,115,0.2);
+    }
+    .ms-photo-placeholder i { font-size: 1.8rem; opacity: 0.3; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .timeline::before { left: 12px; }
+      .milestone { grid-template-columns: 40px 1fr; }
+      .milestone:nth-child(odd)  .ms-content,
+      .milestone:nth-child(even) .ms-content { grid-column: 2; text-align: left; padding: 0 0 0 1rem; }
+      .milestone:nth-child(odd)  .ms-dot,
+      .milestone:nth-child(even) .ms-dot { grid-column: 1; }
+      .milestone:nth-child(odd)  .ms-media,
+      .milestone:nth-child(even) .ms-media { grid-column: 2; padding: 1rem 0 0 1rem; order: 1; }
+      .milestone:nth-child(even) .ms-media { order: 1; }
+    }
+
+    /* ─── LEGEND ─── */
+    .legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+    .legend-item { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: 0.85rem; color: rgba(13,13,13,0.6); }
+    .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--dark); border-top: 3px solid var(--gold); padding: 2.5rem 0; text-align: center; }
+    .footer-brand { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.1em; color: var(--cream); margin-bottom: 0.5rem; }
+    .footer-brand span { color: var(--gold); }
+    .footer-text { font-family: var(--font-body); font-size: 1rem; color: rgba(242,234,208,0.4); }
+    .social-links { margin: 1rem 0; }
+    .social-link { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid rgba(242,234,208,0.2); color: rgba(242,234,208,0.5); font-size: 1.1rem; margin: 0 0.25rem; transition: all 0.2s; text-decoration: none; }
+    .social-link:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Hannette Staack BJJ" height="48" class="me-2">HANNETTE <span>STAACK</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#events">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">Journey</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">The Story Behind the Champion</div>
+      <h1 class="page-hero-title">The <span>Journey</span></h1>
+      <p class="page-hero-sub">From the mats of Brazil to the world stage — a life built on dedication, discipline, and the pursuit of excellence.</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <!--
+          ════════════════════════════════════════════
+          ✏️ EDITAR: Texto de introdução biográfica
+          Substitui o parágrafo abaixo pela bio completa
+          ════════════════════════════════════════════
+          -->
+          <p class="intro-text">
+            Hannette Staack is a Brazilian Jiu-Jitsu black belt, co-founder of Brazil-021 School of Jiu-Jitsu, and one of the greatest competitors in the sport's history. With seven world titles and three ADCC championships, her legacy on the mats is unmatched. Beyond competition, she has dedicated her career to teaching, coaching, and strengthening the female presence in Jiu-Jitsu worldwide.
+          </p>
+
+          <!--
+          ════════════════════════════════════════════
+          ✏️ EDITAR: Citação da Hannette (opcional)
+          Substitui o texto entre as tags <p> e </p>
+          Se não quiser citação, apaga este bloco inteiro
+          ════════════════════════════════════════════
+          -->
+          <div class="intro-quote">
+            <p>"Add a quote from Hannette here."</p>
+            <cite>— Hannette Staack</cite>
+          </div>
+
+          <!--
+          ════════════════════════════════════════════
+          ✏️ EDITAR: Segundo parágrafo (opcional)
+          ════════════════════════════════════════════
+          -->
+          <p class="intro-text">
+            Add a second paragraph here describing her impact on the sport, her teaching philosophy, or her personal journey. This section can be as long as needed.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-label">Professional Roadmap</div>
+      <h2 class="section-title">Career Timeline</h2>
+      <div class="title-bar"></div>
+
+      <!-- LEGENDA -->
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--green);"></div> World Championship</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--gold);"></div> ADCC Championship</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--blue);"></div> MMA Career</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--teal);"></div> Hall of Fame / Recognition</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--sage);"></div> Career Milestone</div>
+      </div>
+
+      <div class="timeline">
+
+        <!--
+        ════════════════════════════════════════════════════════════════
+        📌 MODELO DE MARCO — copie e cole para adicionar novos marcos
+
+        CLASSES DISPONÍVEIS para .milestone:
+          world   → ponto verde  (título mundial)
+          adcc    → ponto dourado (ADCC)
+          mma     → ponto azul   (MMA)
+          hall    → ponto teal   (Hall of Fame / reconhecimento)
+          career  → ponto sage   (marco de carreira geral)
+
+        CLASSES DISPONÍVEIS para .ms-badge:
+          badge-world / badge-adcc / badge-mma / badge-hall / badge-career
+
+        FOTOS:
+          - Com foto vertical:    <img src="img/NOME.jpg" class="ms-photo vertical" alt="...">
+          - Com foto horizontal:  <img src="img/NOME.jpg" class="ms-photo horizontal" alt="...">
+          - Sem foto:             mantenha o bloco .ms-photo-placeholder
+        ════════════════════════════════════════════════════════════════
+        -->
+
+        <!-- ── MARCO 1 ── -->
+        <div class="milestone career">
+          <div class="ms-content">
+            <div class="ms-year">Early 1990s</div>
+            <span class="ms-badge badge-career">Beginning</span>
+            <div class="ms-event-name">First steps in Jiu-Jitsu</div>
+            <p class="ms-desc">
+              ✏️ Add description here. When did Hannette start training? Where? Who was her first instructor?
+            </p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <!--
+            ✏️ FOTO: substitui o placeholder abaixo pela tag <img>
+            Exemplo: <img src="img/hannette-inicio.jpg" class="ms-photo vertical" alt="Hannette início no BJJ">
+            -->
+            <div class="ms-photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>Add photo here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MARCO 2 ── -->
+        <div class="milestone world">
+          <div class="ms-content">
+            <div class="ms-year">2003</div>
+            <span class="ms-badge badge-world">World Champion</span>
+            <div class="ms-event-name">First IBJJF World Title</div>
+            <p class="ms-desc">
+              ✏️ Add description. What category? Where was the championship held? What did this title mean for her career?
+            </p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <!--
+            ✏️ FOTO: substitui o placeholder
+            Exemplo: <img src="img/hannette-2003.jpg" class="ms-photo horizontal" alt="Hannette primeiro título mundial 2003">
+            -->
+            <div class="ms-photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>Add photo here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MARCO 3 ── -->
+        <div class="milestone adcc">
+          <div class="ms-content">
+            <div class="ms-year">2005</div>
+            <span class="ms-badge badge-adcc">ADCC Champion</span>
+            <div class="ms-event-name">First ADCC World Title</div>
+            <p class="ms-desc">
+              ✏️ Add description. The ADCC is considered the most prestigious no-gi grappling event in the world. What was this victory like?
+            </p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <div class="ms-photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>Add photo here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MARCO 4 ── -->
+        <div class="milestone world">
+          <div class="ms-content">
+            <div class="ms-year">2005–2015</div>
+            <span class="ms-badge badge-world">7× World Champion</span>
+            <div class="ms-event-name">A Decade of Dominance</div>
+            <p class="ms-desc">
+              ✏️ Add description. Summarize this era of dominance — the titles, the opponents, the highlights.
+            </p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <!--
+            ✏️ Exemplo com foto real vertical:
+            <img src="img/hannette-campea.jpg" class="ms-photo vertical" alt="Hannette campeã mundial">
+            -->
+            <div class="ms-photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>Add photo here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MARCO 5 ── -->
+        <div class="milestone mma">
+          <div class="ms-content">
+            <div class="ms-year">Mid-2000s</div>
+            <span class="ms-badge badge-mma">MMA Fighter</span>
+            <div class="ms-event-name">Professional MMA Career (3–1–0)</div>
+            <p class="ms-desc">
+              ✏️ Add description. When did she transition to MMA? Which organizations? Notable fights?
+            </p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <div class="ms-photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>Add photo here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MARCO 6 ── -->
+        <div class="milestone career">
+          <div class="ms-content">
+            <div class="ms-year">2010s</div>
+            <span class="ms-badge badge-career">Co-Founder</span>
+            <div class="ms-event-name">Brazil-021 School of Jiu-Jitsu</div>
+            <p class="ms-desc">
+              ✏️ Add description. When was Brazil-021 founded? Who are the co-founders? What is the school's mission?
+            </p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <div class="ms-photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>Add photo here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MARCO 7 ── -->
+        <div class="milestone hall">
+          <div class="ms-content">
+            <div class="ms-year">✏️ Year</div>
+            <span class="ms-badge badge-hall">Hall of Fame</span>
+            <div class="ms-event-name">IBJJF Hall of Fame Inductee</div>
+            <p class="ms-desc">
+              ✏️ Add description. What year was she inducted? What does this recognition mean for her legacy?
+            </p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <div class="ms-photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>Add photo here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MARCO 8 ── -->
+        <div class="milestone career">
+          <div class="ms-content">
+            <div class="ms-year">Present</div>
+            <span class="ms-badge badge-career">Coach & Pioneer</span>
+            <div class="ms-event-name">Chicago — Building the Next Generation</div>
+            <p class="ms-desc">
+              Based in Chicago, Hannette leads seminars worldwide, coaches elite athletes, and continues to be a key figure in strengthening the female presence in Jiu-Jitsu globally.
+            </p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <!--
+            ✏️ Exemplo com foto real horizontal:
+            <img src="img/hannette-chicago.jpg" class="ms-photo horizontal" alt="Hannette ensinando em Chicago">
+            -->
+            <div class="ms-photo-placeholder">
+              <i class="bi bi-image"></i>
+              <span>Add photo here</span>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        ════════════════════════════════════════════════════════════════
+        ➕ PARA ADICIONAR UM NOVO MARCO:
+        Copie o bloco abaixo e cole antes do último marco (Present)
+
+        <div class="milestone CLASSE">
+          <div class="ms-content">
+            <div class="ms-year">ANO</div>
+            <span class="ms-badge BADGE-CLASSE">TIPO</span>
+            <div class="ms-event-name">NOME DO EVENTO</div>
+            <p class="ms-desc">Descrição do marco.</p>
+          </div>
+          <div class="ms-dot"><div class="ms-dot-circle"></div></div>
+          <div class="ms-media">
+            <img src="img/NOME-DA-FOTO.jpg" class="ms-photo vertical" alt="Descrição">
+          </div>
+        </div>
+        ════════════════════════════════════════════════════════════════
+        -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <img src="img/logo.png" alt="Hannette Staack BJJ" height="70" class="mb-2">
+      <div class="footer-brand">HANNETTE <span>STAACK</span></div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/hannettestaack/" target="_blank" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/hannettestaack/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.facebook.com/hannettestaackbjj/" target="_blank" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      </div>
+      <p class="footer-text">© <span id="ano"></span> Hannette Staack · hannettestaackbjj.com · All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
