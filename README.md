@@ -19,5 +19,4 @@ Website oficial de Hannette Staack — 7× Campeã Mundial de Jiu-Jitsu e 3× Ca
 ## Status
 🚧 Em desenvolvimento
 
-## Desenvolvido por
-Projeto desenvolvido em parceria com IA — aprendizado de desenvolvimento web na prática.
+
