@@ -6,241 +6,175 @@
   <title>Hannette Staack BJJ</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
 
   <style>
     :root {
-      --cream:       #f2ead0;
-      --sand:        #d9cdb8;
-      --sage:        #92a69c;
-      --teal:        #567373;
-      --green:       #4aa744;
-      --blue:        #2abbf0;
-      --gold:        #fccd14;
-      --dark:        #0d0d0d;
-      --white:       #ffffff;
+      --cream:        #eef2ee;
+      --sand:         #d8cdb8;
+      --sage:         #8aaa98;
+      --teal:         #4a7060;
+      --green:        #4a7060;
+      --blue:         #5a7a9a;
+      --gold:         #c49a30;
+      --dark:         #2a3d35;
+      --white:        #ffffff;
       --font-display: 'Teko', sans-serif;
-      --font-body:    'Barlow Condensed', sans-serif;
+      --font-body:    'Barlow', sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--cream); color: var(--dark); font-family: var(--font-body); font-size: 1.2rem; line-height: 1.7; overflow-x: hidden; }
+    body { background: var(--cream); color: var(--dark); font-family: var(--font-body); font-size: 1rem; line-height: 1.7; overflow-x: hidden; }
     h1, h2, h3, h4, h5 { font-family: var(--font-display); letter-spacing: 0.04em; }
 
     /* NAVBAR */
-    .navbar { background: rgba(86,115,115,0.97); backdrop-filter: blur(10px); border-bottom: 3px solid var(--gold); padding: 0.75rem 0; position: sticky; top: 0; z-index: 1000; transition: background 0.3s; }
+    .navbar { background: rgba(42,61,53,0.97); backdrop-filter: blur(10px); border-bottom: 3px solid var(--gold); padding: 0.75rem 0; position: sticky; top: 0; z-index: 1000; transition: background 0.3s; }
     .navbar-brand { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.1em; color: var(--cream) !important; line-height: 1; }
     .navbar-brand span { color: var(--gold); }
-    .nav-link { color: rgba(242,234,208,0.85) !important; font-family: var(--font-body); font-weight: 700; font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1rem !important; transition: color 0.2s; }
+    .nav-link { color: rgba(238,242,238,0.85) !important; font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1rem !important; transition: color 0.2s; }
     .nav-link:hover { color: var(--gold) !important; }
     .navbar-toggler { border-color: var(--gold); }
-    .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23fccd14' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+    .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23c49a30' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+
+    /* DROPDOWN */
+    .dropdown-menu { background: var(--dark); border: none; border-top: 2px solid var(--gold); border-radius: 0; padding: 0.5rem 0; min-width: 160px; }
+    .dropdown-item { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(238,242,238,0.85); padding: 0.5rem 1.25rem; }
+    .dropdown-item:hover { background: rgba(196,154,48,0.15); color: var(--gold); }
 
     /* HERO */
-    #hero { min-height: 100vh; background: linear-gradient(135deg, rgba(242,234,208,0.96) 45%, rgba(74,167,68,0.10) 100%); display: flex; align-items: center; position: relative; overflow: hidden; }
-    #hero::before { content: ''; position: absolute; right: -80px; top: 0; width: 420px; height: 100%; background: linear-gradient(180deg, var(--gold) 0%, var(--green) 100%); opacity: 0.08; transform: skewX(-8deg); }
-    .hero-tag { display: inline-block; background: var(--teal); color: var(--cream); font-family: var(--font-body); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; margin-bottom: 1.2rem; clip-path: polygon(0 0,100% 0,96% 100%,0 100%); }
+    #hero { min-height: 100vh; background: linear-gradient(135deg, var(--cream) 45%, rgba(138,170,152,0.15) 100%); display: flex; align-items: center; position: relative; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; right: -80px; top: 0; width: 420px; height: 100%; background: linear-gradient(180deg, var(--gold) 0%, var(--teal) 100%); opacity: 0.07; transform: skewX(-8deg); }
+    .hero-tag { display: inline-block; background: var(--teal); color: var(--cream); font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; margin-bottom: 1.2rem; clip-path: polygon(0 0,100% 0,96% 100%,0 100%); }
     .hero-title { font-family: var(--font-display); font-size: clamp(4rem,10vw,8rem); line-height: 0.88; letter-spacing: 0.03em; color: var(--dark); font-weight: 600; }
-    .hero-title .accent { color: var(--green); }
-    .hero-tagline { font-family: var(--font-display); font-size: 2rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin: 0.4rem 0 0.8rem; padding-left: 0.5rem; }
-    .hero-subtitle { font-size: 1.25rem; color: var(--teal); max-width: 500px; margin: 0.3rem 0 2rem; font-style: italic; letter-spacing: 0.03em; padding-left: 0.5rem; }
+    .hero-title .accent { color: var(--teal); }
+    .hero-tagline { font-family: var(--font-display); font-size: 2rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin: 0.4rem 0 0.8rem; padding-left: 0.5rem; }
+    .hero-subtitle { font-size: 1.1rem; color: var(--teal); max-width: 500px; margin: 0.3rem 0 2rem; font-style: italic; padding-left: 0.5rem; }
 
     /* BUTTONS */
-    .btn-primary-custom { background: var(--gold); color: var(--dark); border: none; font-family: var(--font-body); font-weight: 700; font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.9rem 2.2rem; clip-path: polygon(0 0,100% 0,96% 100%,4% 100%); transition: background 0.2s,transform 0.2s; text-decoration: none; display: inline-block; }
-    .btn-primary-custom:hover { background: var(--green); color: var(--white); transform: translateY(-2px); }
-    .btn-outline-custom { border: 2px solid var(--teal); color: var(--teal); background: transparent; font-family: var(--font-body); font-weight: 700; font-size: 1rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.8rem 2rem; transition: all 0.2s; text-decoration: none; display: inline-block; }
+    .btn-primary-custom { background: var(--gold); color: var(--dark); border: none; font-family: var(--font-body); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.9rem 2.2rem; clip-path: polygon(0 0,100% 0,96% 100%,4% 100%); transition: background 0.2s,transform 0.2s; text-decoration: none; display: inline-block; }
+    .btn-primary-custom:hover { background: var(--teal); color: var(--cream); transform: translateY(-2px); }
+    .btn-outline-custom { border: 2px solid var(--teal); color: var(--teal); background: transparent; font-family: var(--font-body); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.8rem 2rem; transition: all 0.2s; text-decoration: none; display: inline-block; }
     .btn-outline-custom:hover { background: var(--teal); color: var(--cream); }
 
     /* SECTIONS */
     section { padding: 5rem 0; }
-    .section-label { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+    .section-label { font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
     .section-title { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4rem); font-weight: 600; line-height: 0.95; color: var(--dark); margin-bottom: 1rem; }
     .section-title-light { color: var(--cream); }
-    .title-bar { width: 60px; height: 4px; background: linear-gradient(90deg,var(--gold),var(--green)); margin-bottom: 2rem; }
+    .title-bar { width: 60px; height: 4px; background: linear-gradient(90deg,var(--gold),var(--sage)); margin-bottom: 2rem; }
 
     /* ABOUT */
-    #about { background: var(--sage); position: relative; overflow: hidden; }
-    #about::after { content: 'BJJ'; position: absolute; right: -20px; bottom: -40px; font-family: var(--font-display); font-size: 20rem; color: rgba(13,13,13,0.04); line-height: 1; pointer-events: none; user-select: none; }
+    #about { background: var(--teal); position: relative; overflow: hidden; }
+    #about::after { content: 'BJJ'; position: absolute; right: -20px; bottom: -40px; font-family: var(--font-display); font-size: 20rem; color: rgba(238,242,238,0.04); line-height: 1; pointer-events: none; user-select: none; }
     .about-img-wrapper { position: relative; }
     .about-img-wrapper::before { content: ''; position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px; border: 3px solid var(--gold); z-index: 0; }
     .about-img-wrapper img { position: relative; z-index: 1; width: 100%; display: block; }
-    .about-text { font-size: 1.2rem; color: rgba(13,13,13,0.8); margin-bottom: 1.5rem; letter-spacing: 0.02em; }
-    .achievement-chip { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(252,205,20,0.2); border: 1px solid rgba(252,205,20,0.6); color: var(--dark); border-radius: 2px; padding: 0.4rem 0.9rem; font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0.25rem; }
-    .achievement-chip i { color: var(--teal); }
-
-    /* EVENTS */
-    #events { background: var(--cream); }
-
-    /* Accordion meses */
-    .events-accordion { max-width: 860px; margin: 0 auto; }
-    .events-month-btn {
-      width: 100%;
-      background: var(--sand);
-      border: none;
-      border-left: 4px solid var(--gold);
-      border-bottom: 1px solid rgba(86,115,115,0.15);
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      transition: background 0.2s;
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: var(--teal);
-      text-transform: uppercase;
-    }
-    .events-month-btn:hover { background: var(--cream); }
-    .events-month-btn.active { background: var(--cream); border-left-color: var(--teal); }
-    .events-month-btn .month-meta {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: rgba(86,115,115,0.6);
-      text-transform: uppercase;
-    }
-    .events-month-btn .chevron {
-      font-size: 1rem;
-      color: var(--teal);
-      transition: transform 0.3s;
-    }
-    .events-month-btn.active .chevron { transform: rotate(180deg); }
-
-    /* Linhas de evento */
-    .events-list { background: var(--cream); border-left: 4px solid rgba(252,205,20,0.3); overflow: hidden; }
-    .event-row {
-      display: flex;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid rgba(86,115,115,0.1);
-      gap: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .event-row:last-child { border-bottom: none; }
-    .event-row:hover { background: rgba(252,205,20,0.08); }
-    .event-row-date {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--teal);
-      min-width: 90px;
-      letter-spacing: 0.03em;
-    }
-    .event-row-divider { width: 1px; height: 36px; background: rgba(86,115,115,0.2); flex-shrink: 0; }
-    .event-row-info { flex: 1; }
-    .event-row-name {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--dark);
-      line-height: 1.1;
-    }
-    .event-row-sub {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: rgba(13,13,13,0.55);
-      letter-spacing: 0.02em;
-    }
-    .event-row-badge {
-      background: var(--gold);
-      color: var(--dark);
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .event-row-arrow { color: var(--teal); opacity: 0.5; flex-shrink: 0; transition: opacity 0.2s, transform 0.2s; }
-    .event-row:hover .event-row-arrow { opacity: 1; transform: translateX(3px); }
-
-    /* Modal de evento */
-    .event-modal-content { background: var(--cream); border: none; border-radius: 0; border-top: 4px solid var(--gold); }
-    .event-modal-header { background: var(--teal); border-bottom: none; padding: 1.5rem 2rem; display: flex; align-items: flex-start; justify-content: space-between; }
-    .event-modal-label { font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(242,234,208,0.6); margin-bottom: 0.2rem; }
-    .event-modal-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; color: var(--cream); line-height: 1; margin: 0; }
-    .event-modal-close { background: transparent; border: 1px solid rgba(242,234,208,0.3); color: var(--cream); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
-    .event-modal-close:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
-    .event-modal-body { padding: 2.5rem 2rem; }
-    .event-modal-detail { display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-size: 1.1rem; color: rgba(13,13,13,0.75); margin-bottom: 0.75rem; }
-    .event-modal-detail i { color: var(--teal); font-size: 1.1rem; width: 22px; }
-    .event-modal-desc { font-family: var(--font-body); font-size: 1.1rem; color: rgba(13,13,13,0.75); line-height: 1.7; margin: 1.5rem 0; padding-top: 1.5rem; border-top: 1px solid rgba(86,115,115,0.15); }
+    .about-text { font-size: 1rem; color: rgba(238,242,238,0.88); margin-bottom: 1.5rem; line-height: 1.75; }
+    .achievement-chip { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(196,154,48,0.15); border: 1px solid rgba(196,154,48,0.45); color: var(--cream); border-radius: 2px; padding: 0.4rem 0.9rem; font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0.25rem; }
+    .achievement-chip i { color: var(--gold); }
+    #about .section-label { color: rgba(238,242,238,0.6); }
+    #about .section-title { color: var(--cream); }
+    #about .title-bar { background: linear-gradient(90deg,var(--gold),var(--sage)); }
 
     /* SERVICES */
-    #services { background: var(--teal); }
+    #services { background: var(--sage); }
     .service-card { background: var(--cream); border-top: 3px solid transparent; padding: 2rem 1.75rem; height: 100%; transition: border-color 0.2s,transform 0.2s,box-shadow 0.2s; cursor: pointer; }
-    .service-card:hover { border-top-color: var(--gold); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(13,13,13,0.15); }
-    .service-icon { width: 50px; height: 50px; background: linear-gradient(135deg,var(--blue),var(--green)); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--white); margin-bottom: 1.2rem; clip-path: polygon(0 0,100% 0,100% 75%,85% 100%,0 100%); }
-    .service-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; letter-spacing: 0.03em; }
-    .service-desc { font-family: var(--font-body); font-size: 1.1rem; color: rgba(13,13,13,0.65); line-height: 1.6; }
-    .service-more { font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-top: 1rem; transition: color 0.2s; }
-    .service-card:hover .service-more { color: #b8860b; }
+    .service-card:hover { border-top-color: var(--gold); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(42,61,53,0.18); }
+    .service-icon { width: 50px; height: 50px; background: linear-gradient(135deg,var(--blue),var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--white); margin-bottom: 1.2rem; clip-path: polygon(0 0,100% 0,100% 75%,85% 100%,0 100%); }
+    .service-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; letter-spacing: 0.03em; }
+    .service-desc { font-family: var(--font-body); font-size: 1rem; color: rgba(42,61,53,0.7); line-height: 1.65; }
+    .service-more { font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-top: 1rem; transition: color 0.2s; }
+    .service-card:hover .service-more { color: var(--gold); }
+    #services .section-label { color: rgba(238,242,238,0.7); }
 
     /* SERVICE MODALS */
     .service-modal-content { background: var(--cream); border: none; border-radius: 0; border-top: 4px solid var(--gold); }
-    .service-modal-header { background: var(--teal); border-bottom: none; padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-    .service-modal-label { font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(242,234,208,0.6); margin-bottom: 0.2rem; }
+    .service-modal-header { background: var(--dark); border-bottom: none; padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .service-modal-label { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(238,242,238,0.55); margin-bottom: 0.2rem; }
     .service-modal-title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--cream); line-height: 1; margin: 0; }
-    .service-modal-close { background: transparent; border: 1px solid rgba(242,234,208,0.3); color: var(--cream); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
+    .service-modal-close { background: transparent; border: 1px solid rgba(238,242,238,0.3); color: var(--cream); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
     .service-modal-close:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
     .service-modal-body { padding: 2.5rem 2rem; background: var(--cream); }
-    .service-modal-text { font-family: var(--font-body); font-size: 1.15rem; color: rgba(13,13,13,0.8); line-height: 1.7; letter-spacing: 0.02em; margin-bottom: 0; }
-    .service-modal-divider { width: 50px; height: 3px; background: linear-gradient(90deg,var(--gold),var(--green)); margin: 1.75rem 0; }
-    .service-modal-testimonials-label { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.2rem; }
+    .service-modal-text { font-family: var(--font-body); font-size: 1rem; color: rgba(42,61,53,0.82); line-height: 1.75; margin-bottom: 0; }
+    .service-modal-divider { width: 50px; height: 3px; background: linear-gradient(90deg,var(--gold),var(--sage)); margin: 1.75rem 0; }
+    .service-modal-testimonials-label { font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.2rem; }
     .service-testimonial { background: var(--sand); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; margin-bottom: 1rem; }
-    .service-testimonial-quote { font-family: var(--font-body); font-size: 1.1rem; font-style: italic; color: rgba(13,13,13,0.8); line-height: 1.6; margin-bottom: 0.75rem; }
+    .service-testimonial-quote { font-family: var(--font-body); font-size: 1rem; font-style: italic; color: rgba(42,61,53,0.82); line-height: 1.65; margin-bottom: 0.75rem; }
     .service-testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
-    .service-testimonial-name { font-family: var(--font-body); font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; color: var(--dark); }
-    .service-testimonial-role { font-family: var(--font-body); font-size: 0.95rem; color: var(--teal); letter-spacing: 0.05em; }
+    .service-testimonial-name { font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; color: var(--dark); }
+    .service-testimonial-role { font-family: var(--font-body); font-size: 0.88rem; color: var(--teal); }
     .service-testimonial-role::before { content: '·'; margin-right: 0.75rem; color: var(--sage); }
     .service-modal-img { width: 100%; height: 420px; object-fit: cover; object-position: center; display: block; }
-    .service-modal-img-placeholder { width: 100%; height: 420px; background: var(--sand); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; color: rgba(13,13,13,0.35); font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .service-modal-img-placeholder { width: 100%; height: 420px; background: var(--sand); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; color: rgba(42,61,53,0.3); font-family: var(--font-body); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* EVENTS */
+    #events { background: var(--cream); }
+    .events-accordion { max-width: 860px; margin: 0 auto; }
+    .events-month-btn { width: 100%; background: var(--sand); border: none; border-left: 4px solid var(--gold); border-bottom: 1px solid rgba(74,112,96,0.15); padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.2s; font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; letter-spacing: 0.05em; color: var(--teal); text-transform: uppercase; }
+    .events-month-btn:hover { background: var(--cream); }
+    .events-month-btn.active { background: var(--cream); border-left-color: var(--teal); }
+    .events-month-btn .month-meta { font-family: var(--font-body); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; color: rgba(74,112,96,0.6); text-transform: uppercase; }
+    .events-month-btn .chevron { font-size: 1rem; color: var(--teal); transition: transform 0.3s; }
+    .events-month-btn.active .chevron { transform: rotate(180deg); }
+    .events-list { background: var(--cream); border-left: 4px solid rgba(196,154,48,0.3); overflow: hidden; }
+    .event-row { display: flex; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(74,112,96,0.1); gap: 1rem; cursor: pointer; transition: background 0.2s; }
+    .event-row:last-child { border-bottom: none; }
+    .event-row:hover { background: rgba(196,154,48,0.07); }
+    .event-row-date { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--teal); min-width: 90px; }
+    .event-row-divider { width: 1px; height: 36px; background: rgba(74,112,96,0.2); flex-shrink: 0; }
+    .event-row-info { flex: 1; }
+    .event-row-name { font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--dark); line-height: 1.3; }
+    .event-row-sub { font-family: var(--font-body); font-size: 0.88rem; color: rgba(42,61,53,0.55); }
+    .event-row-badge { background: var(--gold); color: var(--dark); font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; white-space: nowrap; flex-shrink: 0; }
+    .event-row-arrow { color: var(--teal); opacity: 0.5; flex-shrink: 0; transition: opacity 0.2s,transform 0.2s; }
+    .event-row:hover .event-row-arrow { opacity: 1; transform: translateX(3px); }
+
+    /* EVENT MODALS */
+    .event-modal-content { background: var(--cream); border: none; border-radius: 0; border-top: 4px solid var(--gold); }
+    .event-modal-header { background: var(--dark); border-bottom: none; padding: 1.5rem 2rem; display: flex; align-items: flex-start; justify-content: space-between; }
+    .event-modal-label { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(238,242,238,0.55); margin-bottom: 0.2rem; }
+    .event-modal-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; color: var(--cream); line-height: 1; margin: 0; }
+    .event-modal-close { background: transparent; border: 1px solid rgba(238,242,238,0.3); color: var(--cream); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
+    .event-modal-close:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+    .event-modal-body { padding: 2.5rem 2rem; }
+    .event-modal-detail { display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-size: 1rem; color: rgba(42,61,53,0.8); margin-bottom: 0.75rem; }
+    .event-modal-detail i { color: var(--teal); font-size: 1rem; width: 22px; }
+    .event-modal-desc { font-family: var(--font-body); font-size: 1rem; color: rgba(42,61,53,0.75); line-height: 1.75; margin: 1.5rem 0; padding-top: 1.5rem; border-top: 1px solid rgba(74,112,96,0.15); }
 
     /* CONTACT */
     #contact { background: var(--sand); }
-    .contact-wrapper { background: var(--cream); border: 1px solid rgba(86,115,115,0.25); padding: 3rem; position: relative; overflow: hidden; }
-    .contact-wrapper::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg,var(--gold),var(--green),var(--blue)); }
+    .contact-wrapper { background: var(--cream); border: 1px solid rgba(74,112,96,0.2); padding: 3rem; position: relative; overflow: hidden; }
+    .contact-wrapper::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg,var(--gold),var(--teal),var(--blue)); }
     .contact-heading { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; color: var(--teal); margin-bottom: 1rem; }
-    .contact-intro { font-family: var(--font-body); font-size: 1.15rem; color: rgba(13,13,13,0.65); margin-bottom: 2rem; letter-spacing: 0.02em; }
-    .form-label { font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
-    .form-control, .form-select { background: var(--sand) !important; border: 1px solid rgba(86,115,115,0.3) !important; color: var(--dark) !important; border-radius: 0 !important; padding: 0.75rem 1rem; font-family: var(--font-body); font-size: 1.1rem; transition: border-color 0.2s,box-shadow 0.2s; }
-    .form-control::placeholder { color: rgba(13,13,13,0.35); }
-    .form-control:focus, .form-select:focus { border-color: var(--teal) !important; box-shadow: 0 0 0 3px rgba(86,115,115,0.15) !important; outline: none; }
+    .contact-intro { font-family: var(--font-body); font-size: 1rem; color: rgba(42,61,53,0.68); margin-bottom: 2rem; line-height: 1.7; }
+    .form-label { font-family: var(--font-body); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+    .form-control, .form-select { background: var(--sand) !important; border: 1px solid rgba(74,112,96,0.3) !important; color: var(--dark) !important; border-radius: 0 !important; padding: 0.75rem 1rem; font-family: var(--font-body); font-size: 1rem; transition: border-color 0.2s,box-shadow 0.2s; }
+    .form-control::placeholder { color: rgba(42,61,53,0.35); }
+    .form-control:focus, .form-select:focus { border-color: var(--teal) !important; box-shadow: 0 0 0 3px rgba(74,112,96,0.15) !important; outline: none; }
     .form-select option { background: var(--cream); color: var(--dark); }
     .contact-info-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
-    .contact-icon { width: 44px; height: 44px; background: rgba(86,115,115,0.12); border: 1px solid rgba(86,115,115,0.3); display: flex; align-items: center; justify-content: center; color: var(--teal); font-size: 1.1rem; flex-shrink: 0; }
-    .contact-info-label { font-family: var(--font-body); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.2rem; }
-    .contact-info-value { font-family: var(--font-body); font-size: 1.1rem; color: var(--dark); }
+    .contact-icon { width: 44px; height: 44px; background: rgba(74,112,96,0.1); border: 1px solid rgba(74,112,96,0.25); display: flex; align-items: center; justify-content: center; color: var(--teal); font-size: 1rem; flex-shrink: 0; }
+    .contact-info-label { font-family: var(--font-body); font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.1rem; }
+    .contact-info-value { font-family: var(--font-body); font-size: 1rem; color: var(--dark); }
 
     /* PARTNERS */
     #partners { background: var(--cream); }
     .partner-item { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 1.5rem; filter: grayscale(30%); opacity: 0.85; transition: filter 0.2s,opacity 0.2s,transform 0.2s; }
     .partner-item:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-3px); }
     .partner-item img { max-height: 70px; max-width: 160px; width: auto; object-fit: contain; }
-    .partner-item-name { font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-top: 0.6rem; text-align: center; }
-    .partner-item-role { font-family: var(--font-body); font-size: 0.85rem; color: var(--teal); opacity: 0.65; letter-spacing: 0.05em; text-align: center; }
+    .partner-item-name { font-family: var(--font-body); font-size: 0.88rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-top: 0.6rem; text-align: center; }
+    .partner-item-role { font-family: var(--font-body); font-size: 0.82rem; color: var(--teal); opacity: 0.6; text-align: center; }
 
     /* FOOTER */
     footer { background: var(--dark); border-top: 3px solid var(--gold); padding: 2.5rem 0; text-align: center; }
     .footer-brand { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.1em; color: var(--cream); margin-bottom: 0.5rem; }
     .footer-brand span { color: var(--gold); }
-    .footer-text { font-family: var(--font-body); font-size: 1rem; color: rgba(242,234,208,0.4); letter-spacing: 0.05em; }
+    .footer-text { font-family: var(--font-body); font-size: 0.9rem; color: rgba(238,242,238,0.4); }
     .social-links { margin: 1rem 0; }
-    .social-link { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid rgba(242,234,208,0.2); color: rgba(242,234,208,0.5); font-size: 1.1rem; margin: 0 0.25rem; transition: all 0.2s; text-decoration: none; }
+    .social-link { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid rgba(238,242,238,0.2); color: rgba(238,242,238,0.5); font-size: 1rem; margin: 0 0.25rem; transition: all 0.2s; text-decoration: none; }
     .social-link:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
-
-    /* ─── DROPDOWN ─── */
-    .dropdown-menu { background: var(--teal); border: none; border-top: 2px solid var(--gold); border-radius: 0; padding: 0.5rem 0; min-width: 160px; }
-    .dropdown-item { font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(242,234,208,0.85); padding: 0.5rem 1.25rem; }
-    .dropdown-item:hover { background: rgba(252,205,20,0.15); color: var(--gold); }
 
     /* ANIMATIONS */
     @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
@@ -273,16 +207,14 @@
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              About
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#about">Bio</a></li>
               <li><a class="dropdown-item" href="about.html">Full Journey</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
         </ul>
@@ -305,7 +237,7 @@
           </div>
         </div>
         <div class="col-lg-5 d-none d-lg-block">
-          <!-- Foto hero temporariamente removida — adicionar quando tiver imagem melhor -->
+          <!-- Foto hero temporariamente removida -->
         </div>
       </div>
     </div>
@@ -324,7 +256,7 @@
           <p class="section-label">About the Champion</p>
           <h2 class="section-title">More Than a Fighter.<br>A Movement.</h2>
           <div class="title-bar"></div>
-          <p class="about-text">Hannette Staack is a Brazilian Jiu-Jitsu black belt, co-founder of <strong style="color:var(--dark);">Brazil-021 School of Jiu-Jitsu</strong>, and one of the greatest competitors in the sport's history. With a total of eight world titles and an ADCC championship, her legacy on the mats is unmatched.</p>
+          <p class="about-text">Hannette Staack is a Brazilian Jiu-Jitsu black belt, co-founder of <strong>Brazil-021 School of Jiu-Jitsu</strong>, and one of the greatest competitors in the sport's history. With a total of eight world titles and three ADCC championships, her legacy on the mats is unmatched.</p>
           <p class="about-text" style="margin-bottom:2rem;">Beyond her achievements, Hannette is recognized as an exceptional teacher and a key figure in strengthening the female presence in Jiu-Jitsu — inspiring a new generation of athletes around the world.</p>
           <div>
             <span class="achievement-chip"><i class="bi bi-trophy-fill"></i> 8× Jiu-Jitsu World Champion (GI & NO-GI)</span>
@@ -332,174 +264,21 @@
             <span class="achievement-chip"><i class="bi bi-award-fill"></i> IBJJF Hall of Fame Inductee</span>
             <span class="achievement-chip"><i class="bi bi-award-fill"></i> Professional MMA Fighter (3–1–0)</span>
             <span class="achievement-chip"><i class="bi bi-star-fill"></i> BJJ Black Belt 5th Degree</span>
-            <span class="achievement-chip"><i class="bi bi-people-fill"></i> Brazil-021 Co-Founder</span>            
+            <span class="achievement-chip"><i class="bi bi-people-fill"></i> Brazil-021 Co-Founder</span>
           </div>
           <div class="mt-4">
-            <a href="about.html" class="btn-primary-custom">
-              Read Her Story <i class="bi bi-arrow-right ms-1"></i>
-            </a>
+            <a href="about.html" class="btn-primary-custom">Read Her Story <i class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- EVENTS -->
-  <section id="events">
-    <div class="container">
-      <div class="text-center mb-5">
-        <p class="section-label">Schedule</p>
-        <h2 class="section-title">Upcoming Events</h2>
-        <div class="title-bar mx-auto"></div>
-      </div>
-
-      <div class="events-accordion">
-
-        <!-- MAY 2026 — aberto por padrão -->
-        <button class="events-month-btn active" onclick="toggleMonth(this)">
-          <span>May 2026</span>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">2 Events</span>
-            <i class="bi bi-chevron-down chevron"></i>
-          </div>
-        </button>
-        <div class="events-list">
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent1">
-            <div class="event-row-date">May 16</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Hannette Staack BJJ Seminar - Bellingham, Michigan</div>
-              <div class="event-row-sub">11:00 AM · Monroe, MI</div>
-            </div>
-            <span class="event-row-badge">Register</span>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent2">
-            <div class="event-row-date">May 17</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Hannette Staack BJJ Seminar - Combat Arts Academy, Seattle</div>
-              <div class="event-row-sub">12:00 PM · Seattle, WA</div>
-            </div>
-            <span class="event-row-badge">Register</span>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-        </div>
-
-        <!-- JUNE 2026 -->
-        <button class="events-month-btn" onclick="toggleMonth(this)">
-          <span>June 2026</span>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">1 Event</span>
-            <i class="bi bi-chevron-down chevron"></i>
-          </div>
-        </button>
-        <div class="events-list" style="display:none;">
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent3">
-            <div class="event-row-date">Jun 26–27</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Rolling with the Ladies BJJ Camp ft. Hannette Staack & Nathalie Ribeiro</div>
-              <div class="event-row-sub">Jiu-Jitsu Camp · Monroe, MI</div>
-            </div>
-            <span class="event-row-badge">Register</span>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-        </div>
-
-        <!-- COMING SOON -->
-        <button class="events-month-btn" style="opacity:0.5; cursor:default;">
-          <span style="color:rgba(86,115,115,0.5);">More events coming</span>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">Stay tuned</span>
-            <i class="bi bi-bell" style="color:var(--teal); opacity:0.4;"></i>
-          </div>
-        </button>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MODAL: Event 1 — Bellingham -->
-  <div class="modal fade" id="modalEvent1" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content event-modal-content">
-        <div class="modal-header event-modal-header">
-          <div>
-            <div class="event-modal-label">Upcoming Event · May 16, 2026</div>
-            <h2 class="event-modal-title">Bellingham BJJ Seminar</h2>
-          </div>
-          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
-        </div>
-        <div class="modal-body event-modal-body">
-          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> May 16, 2026 — 11:00 AM</div>
-          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> Monroe Jiu Jitsu — 11 E Second St, Monroe, MI 48161</div>
-          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Open to all levels — Gi</div>
-          <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> $50 members · $60 non-members</div>
-          <p class="event-modal-desc">Join Hannette Staack for an immersive Jiu-Jitsu seminar open to all levels. Expect technical breakdowns, focused drilling and direct instruction from a 11× World Champion.</p>
-          <a href="https://bellinghambjj.com/hannette/" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">
-            Register Now <i class="bi bi-box-arrow-up-right ms-1"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: Event 2 — Combat Arts -->
-  <div class="modal fade" id="modalEvent2" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content event-modal-content">
-        <div class="modal-header event-modal-header">
-          <div>
-            <div class="event-modal-label">Upcoming Event · May 17, 2026</div>
-            <h2 class="event-modal-title">Combat Arts Academy Seminar</h2>
-          </div>
-          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
-        </div>
-        <div class="modal-body event-modal-body">
-          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> May 17, 2026 — 12:00 PM</div>
-          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> 5050 Delridge Way SW, Seattle, WA 98106</div>
-          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Open to all levels — Gi</div>
-          <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> $75 before May 16 · $85 day-of</div>
-          <p class="event-modal-desc">Hannette Staack brings her world-class instruction to Combat Arts Academy Seattle. A unique opportunity to train directly with one of the greatest competitors in Jiu-Jitsu history.</p>
-          <a href="https://caaseattle.com/caa-events" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">
-            Register Now <i class="bi bi-box-arrow-up-right ms-1"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: Event 3 — Rolling with the Ladies -->
-  <div class="modal fade" id="modalEvent3" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content event-modal-content">
-        <div class="modal-header event-modal-header">
-          <div>
-            <div class="event-modal-label">Upcoming Event · June 26–27, 2026</div>
-            <h2 class="event-modal-title">Rolling with the Ladies</h2>
-          </div>
-          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
-        </div>
-        <div class="modal-body event-modal-body">
-          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> June 26–27, 2026</div>
-          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> Monroe Jiu Jitsu — 11 E Second St, Monroe, MI 48161</div>
-          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Featuring Hannette Staack &amp; Nathalie Ribeiro</div>
-          <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> $250</div>
-          <p class="event-modal-desc">A women's Jiu-Jitsu camp featuring two world champions. Two days of immersive training, technique, and community — designed to elevate the female presence on the mats.</p>
-          <a href="https://www.monroejiujitsu.com/rollingwiththeladies" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">
-            Register Interest <i class="bi bi-arrow-right ms-1"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- SERVICES -->
   <section id="services">
     <div class="container">
       <div class="text-center mb-5">
-        <p class="section-label" style="color:var(--cream);">What We Offer</p>
+        <p class="section-label" style="color:rgba(238,242,238,0.7);">What We Offer</p>
         <h2 class="section-title section-title-light">Training & Services</h2>
         <div class="title-bar mx-auto"></div>
       </div>
@@ -707,6 +486,138 @@
     </div>
   </div>
 
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Schedule</p>
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="title-bar mx-auto"></div>
+      </div>
+      <div class="events-accordion">
+
+        <button class="events-month-btn active" onclick="toggleMonth(this)">
+          <span>May 2026</span>
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <span class="month-meta">2 Events</span>
+            <i class="bi bi-chevron-down chevron"></i>
+          </div>
+        </button>
+        <div class="events-list">
+          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent1">
+            <div class="event-row-date">May 16</div>
+            <div class="event-row-divider"></div>
+            <div class="event-row-info">
+              <div class="event-row-name">Hannette Staack BJJ Seminar — Bellingham, Michigan</div>
+              <div class="event-row-sub">11:00 AM · Monroe, MI</div>
+            </div>
+            <span class="event-row-badge">Register</span>
+            <i class="bi bi-arrow-right event-row-arrow"></i>
+          </div>
+          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent2">
+            <div class="event-row-date">May 17</div>
+            <div class="event-row-divider"></div>
+            <div class="event-row-info">
+              <div class="event-row-name">Hannette Staack BJJ Seminar — Combat Arts Academy, Seattle</div>
+              <div class="event-row-sub">12:00 PM · Seattle, WA</div>
+            </div>
+            <span class="event-row-badge">Register</span>
+            <i class="bi bi-arrow-right event-row-arrow"></i>
+          </div>
+        </div>
+
+        <button class="events-month-btn" onclick="toggleMonth(this)">
+          <span>June 2026</span>
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <span class="month-meta">1 Event</span>
+            <i class="bi bi-chevron-down chevron"></i>
+          </div>
+        </button>
+        <div class="events-list" style="display:none;">
+          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent3">
+            <div class="event-row-date">Jun 26–27</div>
+            <div class="event-row-divider"></div>
+            <div class="event-row-info">
+              <div class="event-row-name">Rolling with the Ladies BJJ Camp ft. Hannette Staack & Nathalie Ribeiro</div>
+              <div class="event-row-sub">Jiu-Jitsu Camp · Monroe, MI</div>
+            </div>
+            <span class="event-row-badge">Register</span>
+            <i class="bi bi-arrow-right event-row-arrow"></i>
+          </div>
+        </div>
+
+        <button class="events-month-btn" style="opacity:0.5; cursor:default;">
+          <span style="color:rgba(74,112,96,0.5);">More events coming</span>
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <span class="month-meta">Stay tuned</span>
+            <i class="bi bi-bell" style="color:var(--teal); opacity:0.4;"></i>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL: Event 1 -->
+  <div class="modal fade" id="modalEvent1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content event-modal-content">
+        <div class="modal-header event-modal-header">
+          <div><div class="event-modal-label">Upcoming Event · May 16, 2026</div><h2 class="event-modal-title">Bellingham BJJ Seminar</h2></div>
+          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body event-modal-body">
+          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> May 16, 2026 — 11:00 AM</div>
+          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> Monroe Jiu Jitsu — 11 E Second St, Monroe, MI 48161</div>
+          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Open to all levels — Gi</div>
+          <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> $50 members · $60 non-members</div>
+          <p class="event-modal-desc">Join Hannette Staack for an immersive Jiu-Jitsu seminar open to all levels. Expect technical breakdowns, focused drilling and direct instruction from an 8× World Champion.</p>
+          <a href="https://bellinghambjj.com/hannette/" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">Register Now <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Event 2 -->
+  <div class="modal fade" id="modalEvent2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content event-modal-content">
+        <div class="modal-header event-modal-header">
+          <div><div class="event-modal-label">Upcoming Event · May 17, 2026</div><h2 class="event-modal-title">Combat Arts Academy Seminar</h2></div>
+          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body event-modal-body">
+          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> May 17, 2026 — 12:00 PM</div>
+          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> 5050 Delridge Way SW, Seattle, WA 98106</div>
+          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Open to all levels — Gi</div>
+          <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> $75 before May 16 · $85 day-of</div>
+          <p class="event-modal-desc">Hannette Staack brings her world-class instruction to Combat Arts Academy Seattle. A unique opportunity to train directly with one of the greatest competitors in Jiu-Jitsu history.</p>
+          <a href="https://caaseattle.com/caa-events" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">Register Now <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Event 3 -->
+  <div class="modal fade" id="modalEvent3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content event-modal-content">
+        <div class="modal-header event-modal-header">
+          <div><div class="event-modal-label">Upcoming Event · June 26–27, 2026</div><h2 class="event-modal-title">Rolling with the Ladies</h2></div>
+          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body event-modal-body">
+          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> June 26–27, 2026</div>
+          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> Monroe Jiu Jitsu — 11 E Second St, Monroe, MI 48161</div>
+          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Featuring Hannette Staack &amp; Nathalie Ribeiro</div>
+          <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> $250</div>
+          <p class="event-modal-desc">A women's Jiu-Jitsu camp featuring two world champions. Two days of immersive training, technique, and community — designed to elevate the female presence on the mats.</p>
+          <a href="https://www.monroejiujitsu.com/rollingwiththeladies" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">Register Interest <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -811,7 +722,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Nav highlight
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     window.addEventListener('scroll', () => {
@@ -822,21 +732,12 @@
         if (link.getAttribute('href') === '#' + current) link.classList.add('active');
       });
     });
-
-    // Accordion por mês
     function toggleMonth(btn) {
       const list = btn.nextElementSibling;
       const isOpen = btn.classList.contains('active');
-      if (isOpen) {
-        btn.classList.remove('active');
-        list.style.display = 'none';
-      } else {
-        btn.classList.add('active');
-        list.style.display = 'block';
-      }
+      if (isOpen) { btn.classList.remove('active'); list.style.display = 'none'; }
+      else { btn.classList.add('active'); list.style.display = 'block'; }
     }
-
-    // Ano dinâmico
     document.getElementById('ano').textContent = new Date().getFullYear();
   </script>
 </body>
