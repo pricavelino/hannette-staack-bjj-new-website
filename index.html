@@ -45,13 +45,18 @@
     .dropdown-item:hover { background: rgba(196,154,48,0.15); color: var(--gold); }
 
     /* HERO */
-    #hero { min-height: 100vh; background: var(--bg-base); display: flex; align-items: center; position: relative; overflow: hidden; }
-    #hero::before { content: ''; position: absolute; right: -80px; top: 0; width: 420px; height: 100%; background: linear-gradient(180deg, var(--gold) 0%, var(--teal) 100%); opacity: 0.06; transform: skewX(-8deg); }
-    .hero-tag { display: inline-block; background: var(--teal); color: var(--bg-base); font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; margin-bottom: 1.2rem; clip-path: polygon(0 0,100% 0,96% 100%,0 100%); }
-    .hero-title { font-family: var(--font-display); font-size: clamp(4rem,10vw,8rem); line-height: 0.88; letter-spacing: 0.03em; color: var(--dark); font-weight: 600; }
-    .hero-title .accent { color: var(--teal); }
-    .hero-tagline { font-family: var(--font-display); font-size: 2rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin: 0.4rem 0 0.8rem; padding-left: 0.5rem; }
-    .hero-subtitle { font-size: 1.05rem; color: var(--teal); max-width: 500px; margin: 0.3rem 0 2rem; font-style: italic; padding-left: 0.5rem; }
+    #hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(105deg, rgba(10,20,15,0.75) 40%, rgba(10,20,15,0.1) 100%),
+        url('img/hannette-hero.jpg') center right/cover no-repeat;
+      display: flex; align-items: center; position: relative;
+    }
+    .hero-tag { display: inline-block; background: var(--gold); color: var(--dark); font-family: var(--font-body); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; margin-bottom: 1.2rem; clip-path: polygon(0 0,100% 0,96% 100%,0 100%); }
+    .hero-title { font-family: var(--font-display); font-size: clamp(3.5rem,9vw,7.5rem); line-height: 0.88; letter-spacing: 0.03em; color: var(--bg-base); font-weight: 600; }
+    .hero-title .accent { color: var(--gold); }
+    .hero-tagline { font-family: var(--font-display); font-size: 2rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue-light, #7aafd4); margin: 0.4rem 0 0.8rem; padding-left: 0.2rem; }
+    .hero-subtitle { font-size: 1rem; color: rgba(238,242,238,0.65); max-width: 500px; margin: 0.3rem 0 2rem; font-style: italic; }
 
     /* BUTTONS */
     .btn-primary-custom { background: var(--gold); color: var(--dark); border: none; font-family: var(--font-body); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.9rem 2.2rem; clip-path: polygon(0 0,100% 0,96% 100%,4% 100%); transition: background 0.2s,transform 0.2s; text-decoration: none; display: inline-block; }
@@ -220,17 +225,17 @@
   </nav>
 
   <!-- HERO -->
-  <section id="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 hero-content">
+    <section id="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 hero-content">
           <div class="hero-tag">8× World Title · 3× ADCC Champion</div>
           <h1 class="hero-title">HANNETTE<br><span class="accent">STAACK</span></h1>
           <p class="hero-tagline">Athlete · Coach · Pioneer</p>
           <p class="hero-subtitle">A Legacy of Strength. A Culture of Growth.</p>
           <div class="d-flex flex-wrap gap-3">
             <a href="#contact" class="btn-primary-custom">Contact me</a>
-            <a href="#about" class="btn-outline-custom">Learn More</a>
+            <a href="#about" class="btn-outline-custom" style="border-color:rgba(238,242,238,0.5); color:rgba(238,242,238,0.85);">Learn More</a>
           </div>
         </div>
         <div class="col-lg-5 d-none d-lg-block">
@@ -682,24 +687,55 @@
     </div>
   </section>
 
-  <!-- PARTNERS -->
-  <section id="partners">
-    <div class="container">
-      <div class="text-center mb-5">
-        <p class="section-label">The People Behind the Champion</p>
-        <h2 class="section-title">Support & Partners</h2>
-        <div class="title-bar mx-auto"></div>
-      </div>
-      <div class="row justify-content-center align-items-center g-2">
-        <div class="col-6 col-sm-4 col-lg-2"><div class="partner-item"><img src="img/partner-brazil021.png" alt="Brazil-021"><div class="partner-item-name">Brazil-021</div><div class="partner-item-role">School of Jiu-Jitsu</div></div></div>
-        <div class="col-6 col-sm-4 col-lg-2"><div class="partner-item"><img src="img/partner-nova-uniao.png" alt="Nova União BJJ"><div class="partner-item-name">Nova União</div><div class="partner-item-role">Brazilian Jiu-Jitsu</div></div></div>
-        <div class="col-6 col-sm-4 col-lg-2"><div class="partner-item"><img src="img/partner-erik.png" alt="Erik Salum Godoy"><div class="partner-item-name">Erik Salum Godoy</div><div class="partner-item-role">Head Coach</div></div></div>
-        <div class="col-6 col-sm-4 col-lg-2"><div class="partner-item"><img src="img/partner-fg.png" alt="Fernando Gonçalves"><div class="partner-item-name">Fernando Gonçalves</div><div class="partner-item-role">Nutrição de Elite</div></div></div>
-        <div class="col-6 col-sm-4 col-lg-2"><div class="partner-item"><img src="img/partner-lilian.png" alt="Lilian Villaça"><div class="partner-item-name">Lilian Villaça</div><div class="partner-item-role">Psicanalista</div></div></div>
-        <div class="col-6 col-sm-4 col-lg-2"><div class="partner-item"><img src="img/partner-cdpd.png" alt="CDPD"><div class="partner-item-name">CDPD</div><div class="partner-item-role">Performance & Research</div></div></div>
-      </div>
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">The People Behind the Champion</p>
+      <h2 class="section-title">Support & Partners</h2>
+      <div class="title-bar mx-auto"></div>
     </div>
-  </section>
+    <div class="row justify-content-center align-items-center g-2">
+
+      <div class="col-6 col-sm-4 col-lg-2">
+        <a href="https://brazil021chicago.com" target="_blank" style="text-decoration:none;">
+          <div class="partner-item"><img src="img/partner-brazil021.png" alt="Brazil-021"><div class="partner-item-name">Brazil-021</div><div class="partner-item-role">School of Jiu-Jitsu</div></div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-lg-2">
+        <a href="https://www.novauniao.com" target="_blank" style="text-decoration:none;">
+          <div class="partner-item"><img src="img/partner-nova-uniao.png" alt="Nova União BJJ"><div class="partner-item-name">Nova União</div><div class="partner-item-role">Brazilian Jiu-Jitsu</div></div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-lg-2">
+        <a href="https://www.cdpd.com.br" target="_blank" style="text-decoration:none;">
+          <div class="partner-item"><img src="img/partner-cdpd.png" alt="CDPD"><div class="partner-item-name">CDPD</div><div class="partner-item-role">Performance & Research</div></div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-lg-2">
+        <a href="SEU_LINK_FG" target="_blank" style="text-decoration:none;">
+          <div class="partner-item"><img src="img/partner-fg.png" alt="Fernando Gonçalves"><div class="partner-item-name">Fernando Gonçalves</div><div class="partner-item-role">Nutrição de Elite</div></div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-lg-2">
+        <a href="SEU_LINK_LILIAN" target="_blank" style="text-decoration:none;">
+          <div class="partner-item"><img src="img/partner-lilian.png" alt="Lilian Villaça"><div class="partner-item-name">Lilian Villaça</div><div class="partner-item-role">Psicanalista</div></div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-lg-2">
+        <a href="SEU_LINK_ERIK" target="_blank" style="text-decoration:none;">
+          <div class="partner-item"><img src="img/partner-erik.png" alt="Erik Salum Godoy"><div class="partner-item-name">Erik Salum Godoy</div><div class="partner-item-role">Head Coach</div></div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer>
