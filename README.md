@@ -6,7 +6,7 @@ Website oficial de Hannette Staack — 7× Campeã Mundial de Jiu-Jitsu e 3× Ca
 - HTML5
 - CSS3
 - Bootstrap 5
-- JavaScript (vanilla)
+- JavaScript
 
 ## Estrutura
 
