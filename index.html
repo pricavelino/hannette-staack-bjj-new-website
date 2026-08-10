@@ -559,6 +559,37 @@ Whether your goal is competitive success, professional excellence, or personal g
           </div>
         </div>
 
+        <!-- AUGUST 2026 -->
+        <button class="events-month-btn" onclick="toggleMonth(this)">
+          <span>August 2026</span>
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <span class="month-meta">2 Events</span>
+            <i class="bi bi-chevron-down chevron"></i>
+          </div>
+        </button>
+        <div class="events-list" style="display:none;">
+          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent4">
+            <div class="event-row-date">Aug 3</div>
+            <div class="event-row-divider"></div>
+            <div class="event-row-info">
+              <div class="event-row-name">Guest Instructor — High Altitude Martial Arts, Denver</div>
+              <div class="event-row-sub">Intermediate Gi 5:30PM · Advanced No-Gi 6:30PM · Denver, CO</div>
+            </div>
+            <span class="event-row-badge">Info</span>
+            <i class="bi bi-arrow-right event-row-arrow"></i>
+          </div>
+          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent5">
+            <div class="event-row-date">Aug 8</div>
+            <div class="event-row-divider"></div>
+            <div class="event-row-info">
+              <div class="event-row-name">Hannette Staack BJJ Seminar — High Altitude Martial Arts, Denver</div>
+              <div class="event-row-sub">Gi 1–2:30PM · No-Gi 2:30–4PM · Denver, CO</div>
+            </div>
+            <span class="event-row-badge">Register</span>
+            <i class="bi bi-arrow-right event-row-arrow"></i>
+          </div>
+        </div>
+
         <button class="events-month-btn" style="opacity:0.5; cursor:default;">
           <span style="color:rgba(74,112,96,0.5);">More events coming</span>
           <div style="display:flex; align-items:center; gap:1rem;">
@@ -625,6 +656,57 @@ Whether your goal is competitive success, professional excellence, or personal g
           <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> $250</div>
           <p class="event-modal-desc">A women's Jiu-Jitsu camp featuring two world champions. Two days of immersive training, technique, and community — designed to elevate the female presence on the mats.</p>
           <a href="https://www.monroejiujitsu.com/rollingwiththeladies" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">Register Interest <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Event 4 — Denver Guest Instructor -->
+  <div class="modal fade" id="modalEvent4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content event-modal-content">
+        <div class="modal-header event-modal-header">
+          <div>
+            <div class="event-modal-label">Upcoming Event · August 3, 2026</div>
+            <h2 class="event-modal-title">Guest Instructor — High Altitude MA</h2>
+          </div>
+          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body event-modal-body">
+          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> August 3, 2026</div>
+          <div class="event-modal-detail"><i class="bi bi-clock-fill"></i> Intermediate Gi 5:30PM · Advanced No-Gi 6:30PM</div>
+          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> High Altitude Martial Arts — 8988 E Hampden Ave, Denver, CO 80231</div>
+          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Intermediate & Advanced levels</div>
+          <p class="event-modal-desc">Hannette Staack joins High Altitude Martial Arts as guest instructor for two special classes — Intermediate Gi and Advanced No-Gi. A great opportunity to train with a world champion in a regular class setting.</p>
+          <a href="#contact" class="btn-primary-custom" data-bs-dismiss="modal" style="clip-path:none; padding:0.85rem 2rem;">
+            Get in Touch <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Event 5 — Denver Seminar -->
+  <div class="modal fade" id="modalEvent5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content event-modal-content">
+        <div class="modal-header event-modal-header">
+          <div>
+            <div class="event-modal-label">Upcoming Event · August 8, 2026</div>
+            <h2 class="event-modal-title">High Altitude Martial Arts Seminar</h2>
+          </div>
+          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body event-modal-body">
+          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> August 8, 2026</div>
+          <div class="event-modal-detail"><i class="bi bi-clock-fill"></i> Gi 1:00–2:30PM · No-Gi 2:30–4:00PM</div>
+          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> High Altitude Martial Arts — 8988 E Hampden Ave, Denver, CO 80231</div>
+          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Open to all levels — Gi & No-Gi</div>
+          <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> $60 per person</div>
+          <p class="event-modal-desc">Join Hannette Staack for a double session seminar in Denver — Gi and No-Gi. A unique opportunity to train directly with an 8× World Champion in both formats.</p>
+          <a href="#contact" class="btn-primary-custom" data-bs-dismiss="modal" style="clip-path:none; padding:0.85rem 2rem;">
+            Register Interest <i class="bi bi-arrow-right ms-1"></i>
+          </a>
         </div>
       </div>
     </div>
