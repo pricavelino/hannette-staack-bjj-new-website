@@ -185,6 +185,10 @@
     .social-link { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid rgba(238,242,238,0.2); color: rgba(238,242,238,0.5); font-size: 1rem; margin: 0 0.25rem; transition: all 0.2s; text-decoration: none; }
     .social-link:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
 
+    /* YEAR FILTER */
+    .year-btn { background: transparent; border: 2px solid var(--teal); color: var(--teal); font-family: var(--font-body); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.15em; padding: 0.4rem 1.2rem; cursor: pointer; transition: all 0.2s; }
+    .year-btn.active { background: var(--teal); color: var(--bg-base); }
+    .year-btn:hover { background: var(--teal); color: var(--bg-base); }
     /* ANIMATIONS */
     @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
     .hero-content > * { animation: fadeUp 0.7s ease both; }
@@ -469,7 +473,9 @@ Whether your goal is competitive success, professional excellence, or personal g
               <div class="service-testimonial"><p class="service-testimonial-quote">"Add your testimonial here."</p><div class="service-testimonial-author"><span class="service-testimonial-name">Student Name</span><span class="service-testimonial-role">Belt & Role</span></div></div>
               <a href="#contact" class="btn-primary-custom mt-4" data-bs-dismiss="modal" style="clip-path:none; padding:0.85rem 2rem;">Start Coaching <i class="bi bi-arrow-right ms-1"></i></a>
             </div>
-            <div class="col-lg-6"><div class="service-modal-img-placeholder"><i class="bi bi-image" style="font-size:2.5rem; opacity:0.3;"></i><span>Add photo here</span></div></div>
+            <div class="col-lg-6">
+              <img src="img/coaching-photo.jpg" alt="Hannette Staack Professional Coaching" class="service-modal-img">
+            </div>
           </div>
         </div>
       </div>
@@ -510,9 +516,17 @@ Whether your goal is competitive success, professional excellence, or personal g
         <h2 class="section-title">Upcoming Events</h2>
         <div class="title-bar mx-auto"></div>
       </div>
+      <!-- FILTRO DE ANO -->
+      <div class="text-center mb-4">
+        <div style="display:inline-flex; gap:0.5rem;">
+          <button class="year-btn active" onclick="filterYear('2026')">2026</button>
+          <button class="year-btn" onclick="filterYear('2027')">2027</button>
+        </div>
+      </div>
       <div class="events-accordion">
-        <button class="events-month-btn active" onclick="toggleMonth(this)">
-          <span>May 2026</span>
+        <!-- MAY 2026 -->
+        <button class="events-month-btn active" onclick="toggleMonth(this)" data-year="2026">
+          <span>May</span>
           <div style="display:flex; align-items:center; gap:1rem;">
             <span class="month-meta">2 Events</span>
             <i class="bi bi-chevron-down chevron"></i>
@@ -525,8 +539,7 @@ Whether your goal is competitive success, professional excellence, or personal g
             <div class="event-row-info">
               <div class="event-row-name">Hannette Staack BJJ Seminar — Bellingham, Michigan</div>
               <div class="event-row-sub">11:00 AM · Monroe, MI</div>
-            </div>
-            <span class="event-row-badge">Register</span>
+            </div>            
             <i class="bi bi-arrow-right event-row-arrow"></i>
           </div>
           <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent2">
@@ -535,14 +548,13 @@ Whether your goal is competitive success, professional excellence, or personal g
             <div class="event-row-info">
               <div class="event-row-name">Hannette Staack BJJ Seminar — Combat Arts Academy, Seattle</div>
               <div class="event-row-sub">12:00 PM · Seattle, WA</div>
-            </div>
-            <span class="event-row-badge">Register</span>
+            </div>            
             <i class="bi bi-arrow-right event-row-arrow"></i>
           </div>
         </div>
-
-        <button class="events-month-btn" onclick="toggleMonth(this)">
-          <span>June 2026</span>
+        <!-- JUNE 2026 -->
+        <button class="events-month-btn active" onclick="toggleMonth(this)" data-year="2026">
+          <span>June</span>
           <div style="display:flex; align-items:center; gap:1rem;">
             <span class="month-meta">1 Event</span>
             <i class="bi bi-chevron-down chevron"></i>
@@ -555,17 +567,16 @@ Whether your goal is competitive success, professional excellence, or personal g
             <div class="event-row-info">
               <div class="event-row-name">Rolling with the Ladies BJJ Camp ft. Hannette Staack & Nathalie Ribeiro</div>
               <div class="event-row-sub">Jiu-Jitsu Camp · Monroe, MI</div>
-            </div>
-            <span class="event-row-badge">Register</span>
+            </div>            
             <i class="bi bi-arrow-right event-row-arrow"></i>
           </div>
         </div>
 
         <!-- AUGUST 2026 -->
-        <button class="events-month-btn" onclick="toggleMonth(this)">
-          <span>August 2026</span>
+        <button class="events-month-btn active" onclick="toggleMonth(this)" data-year="2026">
+          <span>August</span>
           <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">2 Events</span>
+            <span class="month-meta">3 Events</span>
             <i class="bi bi-chevron-down chevron"></i>
           </div>
         </button>
@@ -576,8 +587,7 @@ Whether your goal is competitive success, professional excellence, or personal g
             <div class="event-row-info">
               <div class="event-row-name">Guest Instructor — High Altitude Martial Arts, Denver</div>
               <div class="event-row-sub">Intermediate Gi 5:30PM · Advanced No-Gi 6:30PM · Denver, CO</div>
-            </div>
-            <span class="event-row-badge">Info</span>
+            </div>            
             <i class="bi bi-arrow-right event-row-arrow"></i>
           </div>
           <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent5">
@@ -586,19 +596,38 @@ Whether your goal is competitive success, professional excellence, or personal g
             <div class="event-row-info">
               <div class="event-row-name">Hannette Staack BJJ Seminar — High Altitude Martial Arts, Denver</div>
               <div class="event-row-sub">Gi 1–2:30PM · No-Gi 2:30–4PM · Denver, CO</div>
-            </div>
-            <span class="event-row-badge">Register</span>
+            </div>            
             <i class="bi bi-arrow-right event-row-arrow"></i>
           </div>
-        </div>
-
-        <button class="events-month-btn" style="opacity:0.5; cursor:default;">
-          <span style="color:rgba(74,112,96,0.5);">More events coming</span>
+          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent6">
+            <div class="event-row-date">Aug 22</div>
+            <div class="event-row-divider"></div>
+            <div class="event-row-info">
+              <div class="event-row-name">Séminaire de Jiu-Jitsu Brésilien — Anglet, France</div>
+              <div class="event-row-sub">14h–16h · Dojo du Collège Stella Maris · Anglet, France</div>
+            </div>            
+            <i class="bi bi-arrow-right event-row-arrow"></i>
+          </div>
+        </div>  
+        <!-- SEPTEMBER 2026 -->
+        <button class="events-month-btn" onclick="toggleMonth(this)" data-year="2026">
+          <span>September</span>
           <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">Stay tuned</span>
-            <i class="bi bi-bell" style="color:var(--teal); opacity:0.4;"></i>
+            <span class="month-meta">1 Event</span>
+            <i class="bi bi-chevron-down chevron"></i>
           </div>
         </button>
+        <div class="events-list" style="display:none;">
+          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent7">
+            <div class="event-row-date">Sep 18–20</div>
+            <div class="event-row-divider"></div>
+            <div class="event-row-info">
+              <div class="event-row-name">Hannette Staack BJJ Camp — Breda, Netherlands</div>
+              <div class="event-row-sub">Gi & No-Gi · Renzo Gracie Holland · 3 Days</div>
+            </div>
+            <i class="bi bi-arrow-right event-row-arrow"></i>
+          </div>
+        </div>      
       </div>
     </div>
   </section>
@@ -708,6 +737,79 @@ Whether your goal is competitive success, professional excellence, or personal g
           <p class="event-modal-desc">Join Hannette Staack for a double session seminar in Denver — Gi and No-Gi. A unique opportunity to train directly with an 8× World Champion in both formats.</p>
           <a href="#contact" class="btn-primary-custom" data-bs-dismiss="modal" style="clip-path:none; padding:0.85rem 2rem;">
             Register Interest <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL: Event 6 — Anglet France -->
+  <div class="modal fade" id="modalEvent6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content event-modal-content">
+        <div class="modal-header event-modal-header">
+          <div>
+            <div class="event-modal-label">Upcoming Event · August 22, 2026</div>
+            <h2 class="event-modal-title">Séminaire BJJ — Anglet, France</h2>
+          </div>
+          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body event-modal-body">
+          <div class="event-modal-detail"><i class="bi bi-calendar-event-fill"></i> August 22, 2026 — 14h00 to 16h00</div>
+          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> Dojo du Collège Stella Maris — 40-42 Prom. de la Barre, 64600 Anglet, France</div>
+          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Open to all levels</div>
+          <div class="event-modal-detail"><i class="bi bi-currency-exchange"></i> €30 per person</div>
+          <p class="event-modal-desc">Hannette Staack brings her world-class Brazilian Jiu-Jitsu instruction to the south of France. A unique opportunity to train with an 8× World Champion on the Basque Coast.</p>
+          <a href="https://www.instagram.com/cfso_bjj" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">
+            More Info <i class="bi bi-instagram ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL: Event 7 — Breda Camp -->
+  <div class="modal fade" id="modalEvent7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content event-modal-content">
+        <div class="modal-header event-modal-header">
+          <div>
+            <div class="event-modal-label">Upcoming Event · September 18–20, 2026</div>
+            <h2 class="event-modal-title">Hannette Staack BJJ Camp</h2>
+          </div>
+          <button type="button" class="event-modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body event-modal-body">
+          <div class="event-modal-detail"><i class="bi bi-geo-alt-fill"></i> Renzo Gracie Holland — Slingerweg 118, 4814 AZ Breda, Netherlands</div>
+          <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Gi & No-Gi · Open to all levels</div>
+
+          <div style="margin: 1.5rem 0; padding-top: 1.5rem; border-top: 1px solid rgba(74,112,96,0.12);">
+            <div style="font-family:var(--font-body); font-size:0.78rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); margin-bottom:1rem;">Program</div>
+
+            <div style="margin-bottom:1rem;">
+              <div style="font-family:var(--font-body); font-weight:700; color:var(--dark); margin-bottom:0.3rem;">Friday, September 18</div>
+              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">19:00 – 21:00</div>
+            </div>
+
+            <div style="margin-bottom:1rem;">
+              <div style="font-family:var(--font-body); font-weight:700; color:var(--dark); margin-bottom:0.3rem;">Saturday, September 19</div>
+              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">10:00 – 12:00 · 15:00 – 17:00</div>
+              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">🍕 Pizza Party starting at 19:00</div>
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <div style="font-family:var(--font-body); font-weight:700; color:var(--dark); margin-bottom:0.3rem;">Sunday, September 20</div>
+              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">10:00 – 12:00</div>
+            </div>
+
+            <div style="background:var(--bg-alt); padding:1rem 1.25rem; border-left:3px solid var(--gold);">
+              <div style="font-family:var(--font-body); font-size:0.78rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); margin-bottom:0.5rem;">Registration (Cash Only)</div>
+              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">Until August: <strong>€129</strong></div>
+              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">After August: <strong>€149</strong></div>
+              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">At the door: <strong>€169</strong></div>
+            </div>
+          </div>
+
+          <a href="https://www.renzogracieholland.com/en" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">
+            Register Now <i class="bi bi-box-arrow-up-right ms-1"></i>
           </a>
         </div>
       </div>
@@ -832,9 +934,9 @@ Whether your goal is competitive success, professional excellence, or personal g
                     <option>Elite Peak Performance</option>
                     <option>Private Classes</option>
                     <option>Camps</option>
-                    <option>Professional Athlets Coaching</option>
+                    <option>Professional Coaching (1:1)</option>
                     <option>Sports Commentary</option>
-                    <option>Event Registration</option>
+                    <option>Guest Instructor</option>
                     <option>Other</option>
                   </select>
                 </div>
@@ -942,6 +1044,69 @@ Whether your goal is competitive success, professional excellence, or personal g
       else { btn.classList.add('active'); list.style.display = 'block'; }
     }
     document.getElementById('ano').textContent = new Date().getFullYear();
+    // Fecha modal e navega para seção
+    document.querySelectorAll('a[data-bs-dismiss="modal"][href^="#"]').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        const modal = this.closest('.modal');
+        const bsModal = bootstrap.Modal.getInstance(modal);
+        bsModal.hide();
+        setTimeout(() => {
+          document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      });
+    });
+    function filterYear(year) {
+      document.querySelectorAll('.year-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent === year);
+      });
+      document.querySelectorAll('.events-month-btn').forEach(btn => {
+        const show = btn.dataset.year === year;
+        btn.style.display = show ? 'flex' : 'none';
+        const list = btn.nextElementSibling;
+        if (list && !show) list.style.display = 'none';
+      });
+    }
+
+    // Abre automaticamente o mes atual ou o proximo
+    function openCurrentMonth() {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const currentMonth = now.getMonth(); // 0-11
+
+      const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+      let opened = false;
+      document.querySelectorAll('.events-month-btn[data-year]').forEach(btn => {
+        if (btn.style.display === 'none') return;
+        
+        const spanText = btn.firstElementChild.textContent.trim();
+        console.log('spanText:', spanText);
+        
+        const parts = spanText.split(' ');
+        const btnMonth = months.indexOf(parts[0]);
+        const btnYear = parseInt(btn.dataset.year);
+        
+        console.log('btnMonth:', btnMonth, 'btnYear:', btnYear, 'currentMonth:', currentMonth, 'currentYear:', currentYear);
+
+        const list = btn.nextElementSibling;
+        if (!opened && btnYear >= currentYear && btnMonth >= currentMonth) {
+          btn.classList.add('active');
+          if (list) list.style.display = 'block';
+          opened = true;
+        } else {
+          btn.classList.remove('active');
+          if (list) list.style.display = 'none';
+        }
+      });
+    }
+
+    // Inicializa
+    document.addEventListener('DOMContentLoaded', () => {
+      filterYear('2026');
+      openCurrentMonth();
+    });
   </script>
 </body>
 </html>
