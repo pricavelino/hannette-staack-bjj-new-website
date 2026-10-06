@@ -20,6 +20,7 @@
       --blue:         #5a7a9a;
       --gold:         #c49a30;
       --dark:         #2a3d35;
+      --blue-light:   #7aafd4;
       --cream:        #eef2ee;
       --white:        #ffffff;
       --font-display: 'Teko', sans-serif;
@@ -120,25 +121,39 @@
 
     /* EVENTS */
     #events { background: var(--bg-alt); }
-    .events-accordion { max-width: 860px; margin: 0 auto; }
-    .events-month-btn { width: 100%; background: rgba(42,61,53,0.15); border: none; border-left: 4px solid var(--gold); border-bottom: 1px solid rgba(74,112,96,0.12); padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.2s; font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; letter-spacing: 0.05em; color: var(--teal); text-transform: uppercase; }
-    .events-month-btn:hover { background: rgba(42,61,53,0.1); }
-    .events-month-btn.active { background: rgba(42,61,53,0.08); border-left-color: var(--teal); }
-    .events-month-btn .month-meta { font-family: var(--font-body); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; color: rgba(74,112,96,0.6); text-transform: uppercase; }
-    .events-month-btn .chevron { font-size: 1rem; color: var(--teal); transition: transform 0.3s; }
-    .events-month-btn.active .chevron { transform: rotate(180deg); }
-    .events-list { background: rgba(42,61,53,0.03); border-left: 4px solid rgba(196,154,48,0.25); }
-    .event-row { display: flex; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(74,112,96,0.08); gap: 1rem; cursor: pointer; transition: background 0.2s; }
-    .event-row:last-child { border-bottom: none; }
-    .event-row:hover { background: rgba(196,154,48,0.06); }
-    .event-row-date { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--teal); min-width: 90px; }
-    .event-row-divider { width: 1px; height: 36px; background: rgba(74,112,96,0.2); flex-shrink: 0; }
-    .event-row-info { flex: 1; }
-    .event-row-name { font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--dark); line-height: 1.3; }
-    .event-row-sub { font-family: var(--font-body); font-size: 0.88rem; color: rgba(42,61,53,0.5); }
-    .event-row-badge { background: var(--gold); color: var(--dark); font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; white-space: nowrap; flex-shrink: 0; }
-    .event-row-arrow { color: var(--teal); opacity: 0.4; flex-shrink: 0; transition: opacity 0.2s,transform 0.2s; }
-    .event-row:hover .event-row-arrow { opacity: 1; transform: translateX(3px); }
+    .year-filter { display:flex; gap:8px; justify-content:center; margin-bottom:2rem; }
+    .year-btn { background:transparent; border:2px solid var(--teal); color:var(--teal); font-family:var(--font-body); font-weight:700; font-size:0.85rem; letter-spacing:0.15em; padding:0.4rem 1.2rem; cursor:pointer; transition:all 0.2s; border-radius:0; }
+    .year-btn.active { background:var(--teal); color:var(--bg-base); border-color:var(--teal); }
+    .year-btn:hover { background:var(--teal); color:var(--bg-base); }
+    .events-grid { display:flex; flex-direction:column; gap:1px; background:rgba(42,61,53,0.12); border:1px solid rgba(42,61,53,0.12); overflow:hidden; }
+    .events-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:rgba(42,61,53,0.12); }
+    .month-col { background:#f3f5f2; padding:14px; min-height:120px; }
+    .month-col.has-events { background:var(--white); }
+    .month-col.bookable { background:var(--dark); }
+    .month-name { font-family:var(--font-body); font-size:0.68rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(42,61,53,0.35); margin-bottom:10px; }
+    .month-col.has-events .month-name { color:rgba(42,61,53,0.55); }
+    .month-col.bookable .month-name { color:rgba(238,242,238,0.45); }
+    .no-events { font-family:var(--font-body); font-size:0.75rem; color:rgba(42,61,53,0.25); font-style:italic; }
+    .event-tag { display:block; background:var(--white); border:1px solid rgba(42,61,53,0.1); border-left:3px solid var(--gold); border-radius:0; padding:7px 9px; margin-bottom:5px; cursor:pointer; text-decoration:none; transition:opacity 0.15s; }
+    .event-tag:hover { opacity:0.8; }
+    .tag-seminar { border-left-color:var(--gold); }
+    .tag-camp { border-left-color:var(--teal); }
+    .tag-guest { border-left-color:var(--blue); }
+    .event-tag-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:3px; }
+    .event-tag-day { font-family:var(--font-body); font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(42,61,53,0.45); }
+    .type-badge { font-family:var(--font-body); font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; }
+    .tag-seminar .type-badge { color:var(--gold); }
+    .tag-camp .type-badge { color:var(--teal); }
+    .tag-guest .type-badge { color:var(--blue); }
+    .event-tag-title { font-family:var(--font-body); font-size:0.82rem; font-weight:600; color:var(--dark); line-height:1.3; margin-bottom:3px; }
+    .event-tag-loc { font-family:var(--font-body); font-size:0.72rem; color:rgba(42,61,53,0.5); display:flex; align-items:center; gap:4px; }
+    .event-flag { font-size:14px; line-height:1; }
+    .book-cta { display:block; margin-top:8px; text-decoration:none; }
+    .book-open-label { font-family:var(--font-body); font-size:0.62rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(196,154,48,0.7); margin-bottom:6px; }
+    .book-title { font-family:var(--font-display); font-size:1.1rem; font-weight:600; color:var(--bg-base); text-transform:uppercase; line-height:1; margin-bottom:3px; }
+    .book-sub { font-family:var(--font-body); font-size:0.72rem; color:rgba(238,242,238,0.55); margin-bottom:8px; }
+    .book-btn { font-family:var(--font-body); font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); border-bottom:1px solid rgba(196,154,48,0.4); padding-bottom:1px; }
+    @media (max-width:768px) { .events-row { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 
     /* EVENT MODALS */
     .event-modal-content { background: var(--bg-base); border: none; border-radius: 0; border-top: 4px solid var(--gold); }
@@ -504,7 +519,7 @@ Whether your goal is competitive success, professional excellence, or personal g
     </div>
   </div>
 
-    <!-- EVENTS -->
+          <!-- EVENTS -->
   <section id="events">
     <div class="container">
       <div class="text-center mb-5">
@@ -512,152 +527,133 @@ Whether your goal is competitive success, professional excellence, or personal g
         <h2 class="section-title">Upcoming Events</h2>
         <div class="title-bar mx-auto"></div>
       </div>
-      <!-- FILTRO DE ANO -->
-      <div class="text-center mb-4">
-        <div style="display:inline-flex; gap:0.5rem;">
-          <button class="year-btn active" onclick="filterYear('2026')">2026</button>
-          <button class="year-btn" onclick="filterYear('2027')">2027</button>
+      <div class="year-filter">
+        <button class="year-btn active" onclick="filterYear('2026', this)">2026</button>
+        <button class="year-btn" onclick="filterYear('2027', this)">2027</button>
+      </div>
+
+      <!-- 2026 -->
+      <div id="year-2026">
+        <div class="events-grid">
+          <!-- Row 1: Jan–Apr -->
+          <div class="events-row">
+            <div class="month-col"><div class="month-name">January</div><div class="no-events">No events scheduled</div></div>
+            <div class="month-col"><div class="month-name">February</div><div class="no-events">No events scheduled</div></div>
+            <div class="month-col"><div class="month-name">March</div><div class="no-events">No events scheduled</div></div>
+            <div class="month-col"><div class="month-name">April</div><div class="no-events">No events scheduled</div></div>
+          </div>
+          <!-- Row 2: May–Aug -->
+          <div class="events-row">
+            <div class="month-col has-events">
+              <div class="month-name">May</div>
+              <div class="event-tag tag-seminar" data-bs-toggle="modal" data-bs-target="#modalEvent1">
+                <div class="event-tag-header"><span class="event-tag-day">May 16</span><span class="type-badge">Seminar</span></div>
+                <div class="event-tag-title">Bellingham BJJ</div>
+                <div class="event-tag-loc"><span class="event-flag">🇺🇸</span>Monroe, MI</div>
+              </div>
+              <div class="event-tag tag-seminar" data-bs-toggle="modal" data-bs-target="#modalEvent2">
+                <div class="event-tag-header"><span class="event-tag-day">May 17</span><span class="type-badge">Seminar</span></div>
+                <div class="event-tag-title">Combat Arts Academy</div>
+                <div class="event-tag-loc"><span class="event-flag">🇺🇸</span>Seattle, WA</div>
+              </div>
+            </div>
+            <div class="month-col has-events">
+              <div class="month-name">June</div>
+              <div class="event-tag tag-camp" data-bs-toggle="modal" data-bs-target="#modalEvent3">
+                <div class="event-tag-header"><span class="event-tag-day">Jun 26–27</span><span class="type-badge">Camp</span></div>
+                <div class="event-tag-title">Rolling with the Ladies</div>
+                <div class="event-tag-loc"><span class="event-flag">🇺🇸</span>Monroe, MI</div>
+              </div>
+            </div>
+            <div class="month-col"><div class="month-name">July</div><div class="no-events">No events scheduled</div></div>
+            <div class="month-col has-events">
+              <div class="month-name">August</div>
+              <div class="event-tag tag-guest" data-bs-toggle="modal" data-bs-target="#modalEvent4">
+                <div class="event-tag-header"><span class="event-tag-day">Aug 3</span><span class="type-badge">Guest</span></div>
+                <div class="event-tag-title">High Altitude MA</div>
+                <div class="event-tag-loc"><span class="event-flag">🇺🇸</span>Denver, CO</div>
+              </div>
+              <div class="event-tag tag-seminar" data-bs-toggle="modal" data-bs-target="#modalEvent5">
+                <div class="event-tag-header"><span class="event-tag-day">Aug 8</span><span class="type-badge">Seminar</span></div>
+                <div class="event-tag-title">High Altitude MA</div>
+                <div class="event-tag-loc"><span class="event-flag">🇺🇸</span>Denver, CO</div>
+              </div>
+              <div class="event-tag tag-seminar" data-bs-toggle="modal" data-bs-target="#modalEvent6">
+                <div class="event-tag-header"><span class="event-tag-day">Aug 29</span><span class="type-badge">Seminar</span></div>
+                <div class="event-tag-title">Séminaire BJJ</div>
+                <div class="event-tag-loc"><span class="event-flag">🇫🇷</span>Anglet, France</div>
+              </div>
+            </div>
+          </div>
+          <!-- Row 3: Sep–Dec -->
+          <div class="events-row">
+            <div class="month-col has-events">
+              <div class="month-name">September</div>
+              <div class="event-tag tag-seminar" data-bs-toggle="modal" data-bs-target="#modalEvent8">
+                <div class="event-tag-header"><span class="event-tag-day">Sep 12</span><span class="type-badge">Seminar</span></div>
+                <div class="event-tag-title">ΒΔΑΚ Katerinis</div>
+                <div class="event-tag-loc"><span class="event-flag">🇬🇷</span>Katerini, Greece</div>
+              </div>
+              <div class="event-tag tag-camp" data-bs-toggle="modal" data-bs-target="#modalEvent7">
+                <div class="event-tag-header"><span class="event-tag-day">Sep 18–20</span><span class="type-badge">Camp</span></div>
+                <div class="event-tag-title">Renzo Gracie Holland</div>
+                <div class="event-tag-loc"><span class="event-flag">🇳🇱</span>Breda, Netherlands</div>
+              </div>
+            </div>
+            <div class="month-col has-events">
+              <div class="month-name">October</div>
+              <div class="event-tag tag-seminar" data-bs-toggle="modal" data-bs-target="#modalEvent9">
+                <div class="event-tag-header"><span class="event-tag-day">Oct 31</span><span class="type-badge">Seminar</span></div>
+                <div class="event-tag-title">Fritzen Fight Team</div>
+                <div class="event-tag-loc"><span class="event-flag">🇧🇷</span>Belo Horizonte, BR</div>
+              </div>
+            </div>
+            <div class="month-col bookable">
+              <div class="month-name">November</div>
+              <a class="book-cta" href="#contact">
+                <div class="book-open-label">Open for bookings</div>
+                <div class="book-title">Book an Event</div>
+                <div class="book-sub">Bring Hannette to your academy</div>
+                <span class="book-btn">Get in touch →</span>
+              </a>
+            </div>
+            <div class="month-col bookable">
+              <div class="month-name">December</div>
+              <a class="book-cta" href="#contact">
+                <div class="book-open-label">Open for bookings</div>
+                <div class="book-title">Book an Event</div>
+                <div class="book-sub">Bring Hannette to your academy</div>
+                <span class="book-btn">Get in touch →</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="events-accordion">
 
-        <!-- MAY 2026 -->
-        <button class="events-month-btn active" onclick="toggleMonth(this)" data-year="2026">
-          <span>May</span>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">2 Events</span>
-            <i class="bi bi-chevron-down chevron"></i>
+      <!-- 2027 -->
+      <div id="year-2027" style="display:none;">
+        <div class="events-grid">
+          <div class="events-row">
+            <div class="month-col bookable"><div class="month-name">January</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">February</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">March</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">April</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
           </div>
-        </button>
-        <div class="events-list">
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent1">
-            <div class="event-row-date">May 16</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Hannette Staack BJJ Seminar — Bellingham, Michigan</div>
-              <div class="event-row-sub">11:00 AM · Monroe, MI</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
+          <div class="events-row">
+            <div class="month-col bookable"><div class="month-name">May</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">June</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">July</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">August</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
           </div>
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent2">
-            <div class="event-row-date">May 17</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Hannette Staack BJJ Seminar — Combat Arts Academy, Seattle</div>
-              <div class="event-row-sub">12:00 PM · Seattle, WA</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
+          <div class="events-row">
+            <div class="month-col bookable"><div class="month-name">September</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">October</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">November</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
+            <div class="month-col bookable"><div class="month-name">December</div><a class="book-cta" href="#contact"><div class="book-open-label">Open for bookings</div><div class="book-title">Book an Event</div><div class="book-sub">Bring Hannette to your academy</div><span class="book-btn">Get in touch →</span></a></div>
           </div>
         </div>
-
-        <!-- JUNE 2026 -->
-        <button class="events-month-btn" onclick="toggleMonth(this)" data-year="2026">
-          <span>June</span>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">1 Event</span>
-            <i class="bi bi-chevron-down chevron"></i>
-          </div>
-        </button>
-        <div class="events-list" style="display:none;">
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent3">
-            <div class="event-row-date">Jun 26–27</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Rolling with the Ladies BJJ Camp ft. Hannette Staack & Nathalie Ribeiro</div>
-              <div class="event-row-sub">Jiu-Jitsu Camp · Monroe, MI</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-        </div>
-
-        <!-- AUGUST 2026 -->
-        <button class="events-month-btn" onclick="toggleMonth(this)" data-year="2026">
-          <span>August</span>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">3 Events</span>
-            <i class="bi bi-chevron-down chevron"></i>
-          </div>
-        </button>
-        <div class="events-list" style="display:none;">
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent4">
-            <div class="event-row-date">Aug 3</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Guest Instructor — High Altitude Martial Arts, Denver</div>
-              <div class="event-row-sub">Intermediate Gi 5:30PM · Advanced No-Gi 6:30PM · Denver, CO</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent5">
-            <div class="event-row-date">Aug 8</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Hannette Staack BJJ Seminar — High Altitude Martial Arts, Denver</div>
-              <div class="event-row-sub">Gi 1–2:30PM · No-Gi 2:30–4PM · Denver, CO</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent6">
-            <div class="event-row-date">Aug 29</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Séminaire de Jiu-Jitsu Brésilien — Anglet, France</div>
-              <div class="event-row-sub">14h–16h · Dojo du Collège Stella Maris · Anglet, France</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-        </div>
-
-        <!-- SEPTEMBER 2026 -->
-        <button class="events-month-btn" onclick="toggleMonth(this)" data-year="2026">
-          <span>September</span>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">2 Events</span>
-            <i class="bi bi-chevron-down chevron"></i>
-          </div>
-        </button>
-        <div class="events-list" style="display:none;">
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent8">
-            <div class="event-row-date">Sep 12</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Hannette Staack BJJ Seminar — Katerini, Greece</div>
-              <div class="event-row-sub">Gi & No-Gi · ΒΔΑΚ Katerinis · Katerini, Greece</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent7">
-            <div class="event-row-date">Sep 18–20</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Hannette Staack BJJ Camp — Breda, Netherlands</div>
-              <div class="event-row-sub">Gi & No-Gi · Renzo Gracie Holland · 3 Days</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-        </div>
-
-        <!-- OCTOBER 2026 -->
-        <button class="events-month-btn" onclick="toggleMonth(this)" data-year="2026">
-          <span>October</span>
-          <div style="display:flex; align-items:center; gap:1rem;">
-            <span class="month-meta">1 Event</span>
-            <i class="bi bi-chevron-down chevron"></i>
-          </div>
-        </button>
-        <div class="events-list" style="display:none;">
-          <div class="event-row" data-bs-toggle="modal" data-bs-target="#modalEvent9">
-            <div class="event-row-date">Oct 31</div>
-            <div class="event-row-divider"></div>
-            <div class="event-row-info">
-              <div class="event-row-name">Hannette Staack BJJ Seminar — Belo Horizonte, Brazil</div>
-              <div class="event-row-sub">Fritzen Fight Team · Belo Horizonte, BR</div>
-            </div>
-            <i class="bi bi-arrow-right event-row-arrow"></i>
-          </div>
-        </div>
-
       </div>
+
     </div>
   </section>
 
@@ -822,7 +818,7 @@ Whether your goal is competitive success, professional excellence, or personal g
             <div style="margin-bottom:1rem;">
               <div style="font-family:var(--font-body); font-weight:700; color:var(--dark); margin-bottom:0.3rem;">Saturday, September 19</div>
               <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">10:00 – 12:00 · 15:00 – 17:00</div>
-              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">🍕 Pizza Party starting at 19:00</div>
+              <div style="font-family:var(--font-body); font-size:0.95rem; color:rgba(42,61,53,0.75);">Pizza Party starting at 19:00</div>
             </div>
 
             <div style="margin-bottom:1.5rem;">
@@ -886,9 +882,7 @@ Whether your goal is competitive success, professional excellence, or personal g
           <div class="event-modal-detail"><i class="bi bi-people-fill"></i> Open to all levels</div>
           <div class="event-modal-detail"><i class="bi bi-currency-dollar"></i> R$120 FFT students · R$150 other teams</div>
           <p class="event-modal-desc">Hannette Staack traz sua instrução de Jiu-Jitsu de nível mundial a Belo Horizonte. Uma oportunidade única de treinar com uma campeã mundial 8 vezes.</p>
-          <a href="#contact" class="btn-primary-custom" data-bs-dismiss="modal" style="clip-path:none; padding:0.85rem 2rem;">
-            Register Interest <i class="bi bi-arrow-right ms-1"></i>
-          </a>
+          <a href="https://www.instagram.com/teamfritzen/" target="_blank" class="btn-primary-custom" style="clip-path:none; padding:0.85rem 2rem;">More Info <i class="bi bi-instagram ms-1"></i></a>
         </div>
       </div>
     </div>
@@ -1032,6 +1026,7 @@ Whether your goal is competitive success, professional excellence, or personal g
                   <label class="form-label" for="subject">Subject / Service</label>
                   <select id="subject" name="subject" class="form-select">
                     <option value="" disabled selected>Select a service...</option>
+                    <option>Book an Event</option>
                     <option>Seminars & Workshops</option>
                     <option>Elite Peak Performance</option>
                     <option>Private Classes</option>
@@ -1139,14 +1134,16 @@ Whether your goal is competitive success, professional excellence, or personal g
         if (link.getAttribute('href') === '#' + current) link.classList.add('active');
       });
     });
-    function toggleMonth(btn) {
-      const list = btn.nextElementSibling;
-      const isOpen = btn.classList.contains('active');
-      if (isOpen) { btn.classList.remove('active'); list.style.display = 'none'; }
-      else { btn.classList.add('active'); list.style.display = 'block'; }
+
+    function filterYear(year, btn) {
+      document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('[id^="year-"]').forEach(el => el.style.display = 'none');
+      document.getElementById('year-' + year).style.display = 'block';
     }
+
     document.getElementById('ano').textContent = new Date().getFullYear();
-    // Fecha modal e navega para seção
+
     document.querySelectorAll('a[data-bs-dismiss="modal"][href^="#"]').forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1158,56 +1155,6 @@ Whether your goal is competitive success, professional excellence, or personal g
           document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
         }, 300);
       });
-    });
-    function filterYear(year) {
-      document.querySelectorAll('.year-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent === year);
-      });
-      document.querySelectorAll('.events-month-btn').forEach(btn => {
-        const show = btn.dataset.year === year;
-        btn.style.display = show ? 'flex' : 'none';
-        const list = btn.nextElementSibling;
-        if (list && !show) list.style.display = 'none';
-      });
-    }
-
-    // Abre automaticamente o mes atual ou o proximo
-    function openCurrentMonth() {
-      const now = new Date();
-      const currentYear = now.getFullYear();
-      const currentMonth = now.getMonth(); // 0-11
-
-      const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-      let opened = false;
-      document.querySelectorAll('.events-month-btn[data-year]').forEach(btn => {
-        if (btn.style.display === 'none') return;
-        
-        const spanText = btn.firstElementChild.textContent.trim();
-        console.log('spanText:', spanText);
-        
-        const parts = spanText.split(' ');
-        const btnMonth = months.indexOf(parts[0]);
-        const btnYear = parseInt(btn.dataset.year);
-        
-        console.log('btnMonth:', btnMonth, 'btnYear:', btnYear, 'currentMonth:', currentMonth, 'currentYear:', currentYear);
-
-        const list = btn.nextElementSibling;
-        if (!opened && btnYear >= currentYear && btnMonth >= currentMonth) {
-          btn.classList.add('active');
-          if (list) list.style.display = 'block';
-          opened = true;
-        } else {
-          btn.classList.remove('active');
-          if (list) list.style.display = 'none';
-        }
-      });
-    }
-
-    // Inicializa
-    document.addEventListener('DOMContentLoaded', () => {
-      filterYear('2026');
-      openCurrentMonth();
     });
   </script>
 </body>
